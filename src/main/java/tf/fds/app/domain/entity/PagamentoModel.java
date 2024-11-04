@@ -1,5 +1,5 @@
 package tf.fds.app.domain.entity;
 
-public class AppModel {
+public class PagamentoModel {
     
 }
