@@ -2,13 +2,13 @@ package tf.fds.app.domain.entity;
 
 import java.util.Date;
 
-public class PagamentoModel {
+public class PaymentModel {
     private long code;
     private double payedValue;
     private Date paymentDate;
     private String sale;
 
-    public PagamentoModel(long code, double payedValue, Date paymentDate, String sale) {
+    public PaymentModel(long code, double payedValue, Date paymentDate, String sale) {
         this.code = code;
         this.payedValue = payedValue;
         this.paymentDate = paymentDate;

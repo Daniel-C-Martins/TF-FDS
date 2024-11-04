@@ -1,10 +1,10 @@
 package tf.fds.app.domain.entity;
 
-public class UsuarioModel {
+public class UserModel {
     private String name;
     private String password;
 
-    public UsuarioModel(String name, String password) {
+    public UserModel(String name, String password) {
         this.name = name;
         this.password = password;
     }

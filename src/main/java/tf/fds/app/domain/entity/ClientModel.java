@@ -1,11 +1,11 @@
 package tf.fds.app.domain.entity;
 
-public class ClienteModel {
+public class ClientModel {
     private long code;
     private String name;
     private String email;
 
-    public ClienteModel(long code, String name, String email) {
+    public ClientModel(long code, String name, String email) {
         this.code = code;
         this.name = name;
         this.email = email;
