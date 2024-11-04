@@ -1,31 +1,31 @@
 package tf.fds.app.domain.entity;
 
 public class UsuarioModel {
-    private String nome;
-    private String senha;
-    
-    public UsuarioModel(String nome, String senha) {
-        this.nome = nome;
-        this.senha = senha;
+    private String name;
+    private String password;
+
+    public UsuarioModel(String name, String password) {
+        this.name = name;
+        this.password = password;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getPassword() {
+        return password;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String toString(){
-        return "Nome: " + nome + ", Senha: " + senha;
-    }    
+        return "name: " + name + ", password: " + password;
+    }
 }

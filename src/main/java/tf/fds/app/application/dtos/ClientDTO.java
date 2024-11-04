@@ -1,5 +1,5 @@
 package tf.fds.app.application.dtos;
 
-public class PagamentoDTO {
-    
+public class ClientDTO {
+
 }

@@ -1,14 +1,14 @@
 package tf.fds.app.domain.entity;
 
-public class ClienteModel {
+public class ApplicativeModel {
     private long code;
     private String name;
-    private String email;
+    private double monthlyCost;
 
-    public ClienteModel(long code, String name, String email) {
+    public ApplicativeModel(long code, String name, double monthlyCost) {
         this.code = code;
         this.name = name;
-        this.email = email;
+        this.monthlyCost = monthlyCost;
     }
 
     public long getCode() {
@@ -27,16 +27,16 @@ public class ClienteModel {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public double getMonthlyCost() {
+        return monthlyCost;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setMonthlyCost(double monthlyCost) {
+        this.monthlyCost = monthlyCost;
     }
 
     @Override
     public String toString() {
-        return "code: " + code + ", name: " + name + ", Email: " + email;
+        return "code: " + code + ", name: " + name + ", Custo Mensal: " + monthlyCost;
     }
 }

@@ -3,51 +3,51 @@ package tf.fds.app.domain.entity;
 import java.util.Date;
 
 public class PagamentoModel {
-    private long codigo;
-    private double valorPago;
-    private Date dataPagamento;
-    private String promocao;
-    
-    public PagamentoModel(long codigo, double valorPago, Date dataPagamento, String promocao) {
-        this.codigo = codigo;
-        this.valorPago = valorPago;
-        this.dataPagamento = dataPagamento;
-        this.promocao = promocao;
+    private long code;
+    private double payedValue;
+    private Date paymentDate;
+    private String sale;
+
+    public PagamentoModel(long code, double payedValue, Date paymentDate, String sale) {
+        this.code = code;
+        this.payedValue = payedValue;
+        this.paymentDate = paymentDate;
+        this.sale = sale;
     }
 
-    public long getCodigo() {
-        return codigo;
+    public long getCode() {
+        return code;
     }
 
-    public void setCodigo(long codigo) {
-        this.codigo = codigo;
+    public void setCode(long code) {
+        this.code = code;
     }
 
-    public double getValorPago() {
-        return valorPago;
+    public double getPayedValue() {
+        return payedValue;
     }
 
-    public void setValorPago(double valorPago) {
-        this.valorPago = valorPago;
+    public void setPayedValue(double payedValue) {
+        this.payedValue = payedValue;
     }
 
-    public Date getDataPagamento() {
-        return dataPagamento;
+    public Date getPaymentDate() {
+        return paymentDate;
     }
 
-    public void setDataPagamento(Date dataPagamento) {
-        this.dataPagamento = dataPagamento;
+    public void setPpaymentDate(Date paymentDate) {
+        this.paymentDate = paymentDate;
     }
 
-    public String getPromocao() {
-        return promocao;
+    public String getSale() {
+        return sale;
     }
 
-    public void setPromocao(String promocao) {
-        this.promocao = promocao;
+    public void setSale(String sale) {
+        this.sale = sale;
     }
-    
+
     public String toString(){
-        return "Codigo: " + codigo + ", Valor Pago: " + valorPago + ", Data Pagamento: " + dataPagamento + ", Promocao: " + promocao;
+        return "code: " + code + ", Valor Pago: " + payedValue + ", Data Pagamento: " + paymentDate + ", sale: " + sale;
     }
 }
