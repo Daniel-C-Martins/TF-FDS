@@ -1,21 +1,31 @@
-package tf.fds.app.adapterInterface.repositories.entities;
+package tf.fds.app.infra.repositories.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
 import java.util.List;
 
 @Entity
+@Table(name = "applicative")
 public class Applicative {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "app_code", nullable = false)
     private Long code;
+
+    @Column(name = "name", nullable = false)
     private String name;
+
+    @Column(name = "monthly_cost", nullable = false)
     private double monthlyCost;
 
     @OneToMany(mappedBy = "applicative")
+    @Column(name = "signatures", nullable = true)
     private List<Signature> signatures;
 
     public Applicative() {}
@@ -55,7 +65,6 @@ public class Applicative {
 
     public void setSubscriptions(List<Signature> subscriptions) {
         this.signatures = subscriptions;
-    }
-     
+    } 
 }
 

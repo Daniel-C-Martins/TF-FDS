@@ -1,22 +1,32 @@
-package tf.fds.app.adapterInterface.repositories.entities;
+package tf.fds.app.infra.repositories.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
 import java.util.List;
 
 @Entity
+@Table(name = "client")
 public class Client {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "client_code", nullable = false)
     private Long code;
+
+    @Column(name = "name", nullable = false)
     private String name;
+
+    @Column(name = "email", nullable = false)
     private String email;
 
     @OneToMany(mappedBy = "client")
+    @Column(name = "signatures", nullable = true)
     private List<Signature> signatures;
 
     public Client() {}
@@ -57,6 +67,4 @@ public class Client {
     public void setSignatures(List<Signature> signatures) {
         this.signatures = signatures;
     }
-
-    // Getters and Setters
 }

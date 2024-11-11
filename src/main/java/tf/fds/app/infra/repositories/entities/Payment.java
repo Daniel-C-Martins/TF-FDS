@@ -1,20 +1,32 @@
-package tf.fds.app.adapterInterface.repositories.entities;
+package tf.fds.app.infra.repositories.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
 import java.util.Date;
 
 @Entity
+@Table(name = "payment")
 public class Payment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long code;
+    @Column(name = "payment_code", nullable = false)
+    private long code;
+
+    @Column(name = "payed_value", nullable = false)
     private double payedValue;
+
+    @Column(name = "payment_date", nullable = false)
     private Date paymentDate;
+
+    @Column(name = "sale", nullable = true)
     private String sale;
 
     @ManyToOne

@@ -1,5 +1,6 @@
-package tf.fds.app.adapterInterface.repositories.entities;
+package tf.fds.app.infra.repositories.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -7,16 +8,24 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
 import java.util.Date;
 import java.util.List;
 
 @Entity
+@Table(name = "signature")
 public class Signature {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "signature_code", nullable = false)
     private Long code;
-    private Date beginningDate;;
+
+    @Column(name = "beginning_Date", nullable = false)
+    private Date beginningDate;
+
+    @Column(name = "end_date", nullable = false)
     private Date endDate;
 
     @ManyToOne
