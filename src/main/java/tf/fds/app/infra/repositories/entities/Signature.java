@@ -16,7 +16,7 @@ public class Signature {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long code;
-    private Date beginningDate;;
+    private Date beginningDate;
     private Date endDate;
 
     @ManyToOne
