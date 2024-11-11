@@ -96,4 +96,3 @@ public class Signature {
         this.payments = payments;
     }
 }
-

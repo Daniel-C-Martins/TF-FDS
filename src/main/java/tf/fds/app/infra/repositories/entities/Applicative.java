@@ -65,6 +65,6 @@ public class Applicative {
 
     public void setSubscriptions(List<Signature> subscriptions) {
         this.signatures = subscriptions;
-    } 
+    }
+     
 }
-
