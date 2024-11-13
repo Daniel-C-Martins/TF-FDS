@@ -1,7 +1,7 @@
 package tf.fds.app.domain.repositories;
 
-import tf.fds.app.infra.repositories.entities.Payment;
+import tf.fds.app.domain.entity.PaymentModel;
 
 public interface PaymentRepository {
-    Payment registerPayment(Payment payment, long codass);
+    PaymentModel registerPayment(PaymentModel payment, long codass);
 }
