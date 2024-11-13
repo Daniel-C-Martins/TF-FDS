@@ -3,14 +3,22 @@ package tf.fds.app.domain.entity;
 import java.util.Date;
 
 public class SignatureModel {
+    public enum SignatureTypes {
+        ALL,
+        ACTIVE,
+        CANCELED
+    }
+
     private long code;
     private Date beginningDate;
     private Date endDate;
+    private SignatureTypes signatureType;
 
-    public SignatureModel(long code, Date beginningDate, Date endDate) {
+    public SignatureModel(long code, Date beginningDate, Date endDate, SignatureTypes signatureTypes) {
         this.code = code;
         this.beginningDate = beginningDate;
         this.endDate = endDate;
+        this.signatureType = signatureTypes;
     }
 
     public long getCode() {
@@ -35,6 +43,10 @@ public class SignatureModel {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public SignatureTypes getSignatureTypes(){
+        return signatureType;
     }
 
     public String toString() {
