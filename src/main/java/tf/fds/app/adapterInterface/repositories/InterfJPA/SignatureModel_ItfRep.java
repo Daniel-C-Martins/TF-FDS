@@ -1,4 +1,4 @@
-package tf.fds.app.adapterInterface.repositories.implemRepositories;
+package tf.fds.app.adapterInterface.repositories.InterfJPA;
 
 import java.util.List;
 import java.util.Optional;
