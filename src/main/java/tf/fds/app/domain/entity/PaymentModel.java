@@ -3,6 +3,11 @@ package tf.fds.app.domain.entity;
 import java.util.Date;
 
 public class PaymentModel {
+    public enum PaymentStatus {
+        OK,
+        INCORRECT_VALUE
+    }
+
     private long code;
     private double payedValue;
     private Date paymentDate;

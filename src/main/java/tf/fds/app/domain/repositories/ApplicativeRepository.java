@@ -2,12 +2,13 @@ package tf.fds.app.domain.repositories;
 
 import java.util.List;
 
-import tf.fds.app.infra.repositories.entities.Applicative;
-import tf.fds.app.infra.repositories.entities.Client;
-import tf.fds.app.infra.repositories.entities.Signature;
+import tf.fds.app.domain.entity.ApplicativeModel;
+import tf.fds.app.domain.entity.ClientModel;
+import tf.fds.app.domain.entity.SignatureModel.SignatureTypes;
+
 
 public interface ApplicativeRepository {
-    List<Client> getAllClients();
-    Applicative updateMonthlyCost(float newCost, Long id );
-    List<Signature> getAllSignatures(long codapp);
+    List<ClientModel> getAllClients();
+    ApplicativeModel updateMonthlyCost(float newCost, Long id );
+    List<SignatureTypes> getAllSignatures(long codapp);
 }

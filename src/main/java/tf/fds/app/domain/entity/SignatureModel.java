@@ -12,13 +12,11 @@ public class SignatureModel {
     private long code;
     private Date beginningDate;
     private Date endDate;
-    private SignatureTypes signatureType;
 
-    public SignatureModel(long code, Date beginningDate, Date endDate, SignatureTypes signatureTypes) {
+    public SignatureModel(long code, Date beginningDate, Date endDate) {
         this.code = code;
         this.beginningDate = beginningDate;
         this.endDate = endDate;
-        this.signatureType = signatureTypes;
     }
 
     public long getCode() {
@@ -43,10 +41,6 @@ public class SignatureModel {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
-    }
-
-    public SignatureTypes getSignatureTypes(){
-        return signatureType;
     }
 
     public String toString() {
