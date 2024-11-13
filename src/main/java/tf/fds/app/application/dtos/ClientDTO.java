@@ -1,7 +1,5 @@
 package tf.fds.app.application.dtos;
 
-import org.springframework.boot.autoconfigure.integration.IntegrationProperties.RSocket.Client;
-
 import tf.fds.app.domain.entity.ClientModel;
 
 public class ClientDTO {
