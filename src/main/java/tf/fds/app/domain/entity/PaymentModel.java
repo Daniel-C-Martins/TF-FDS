@@ -1,5 +1,6 @@
 package tf.fds.app.domain.entity;
 
+import java.security.Signature;
 import java.util.Date;
 
 public class PaymentModel {
@@ -12,12 +13,14 @@ public class PaymentModel {
     private double payedValue;
     private Date paymentDate;
     private String sale;
+    private SignatureModel signature;
 
-    public PaymentModel(long code, double payedValue, Date paymentDate, String sale) {
+    public PaymentModel(long code, double payedValue, Date paymentDate, String sale, SignatureModel signatureModel) {
         this.code = code;
         this.payedValue = payedValue;
         this.paymentDate = paymentDate;
         this.sale = sale;
+        this.signature = signatureModel;
     }
 
     public long getCode() {
@@ -36,6 +39,10 @@ public class PaymentModel {
         return sale;
     }
 
+    public SignatureModel getSignature() {
+        return signature;
+    }
+
     public void setCode(long code) {
         this.code = code;
     }
@@ -50,5 +57,9 @@ public class PaymentModel {
 
     public void setSale(String sale) {
         this.sale = sale;
+    }
+
+    public void setSignature(SignatureModel signature) {
+        this.signature = signature;
     }
 }
