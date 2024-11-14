@@ -1,6 +1,8 @@
 package tf.fds.app.domain.entity;
 
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
 public class SignatureModel {
     public enum SignatureTypes {
@@ -12,38 +14,64 @@ public class SignatureModel {
     private long code;
     private Date beginningDate;
     private Date endDate;
+    private ClientModel client;
+    private ApplicativeModel applicative;
+    private List<PaymentModel> payments;
 
-    public SignatureModel(long code, Date beginningDate, Date endDate) {
+    public SignatureModel(long code, Date beginningDate, Date endDate, ClientModel client, ApplicativeModel applicative) {
         this.code = code;
         this.beginningDate = beginningDate;
         this.endDate = endDate;
+        this.client = client;
+        this.applicative = applicative;
+        this.payments = new LinkedList<>();
     }
 
     public long getCode() {
         return code;
     }
 
-    public void setCode(long code) {
-        this.code = code;
-    }
-
     public Date getBeginningDate() {
         return beginningDate;
-    }
-
-    public void setBeginningDate(Date beginningDate) {
-        this.beginningDate = beginningDate;
     }
 
     public Date getEndDate() {
         return endDate;
     }
 
+    public ClientModel getClient() {
+        return client;
+    }
+
+    public ApplicativeModel getApplicative() {
+        return applicative;
+    }
+
+    public List<PaymentModel> getPayments() {
+        return payments;
+    }
+
+    public void setCode(long code) {
+        this.code = code;
+    }
+
+    public void setBeginningDate(Date beginningDate) {
+        this.beginningDate = beginningDate;
+    }
+
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
 
-    public String toString() {
-        return "code: " + code + ", Inicio Vigencia: " + beginningDate + ", Fim Vigencia: " + endDate;
+    public void setClient(ClientModel client) {
+        this.client = client;
+    }
+
+    public void setApplicative(ApplicativeModel applicative) {
+        this.applicative = applicative;
+    }
+
+    public void setPayments(List<PaymentModel> payments) {
+        this.payments = payments;
     }
 }

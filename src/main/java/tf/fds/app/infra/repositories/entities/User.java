@@ -13,7 +13,7 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
 
-    public User() {}
+    protected User() {}
 
     public User(String username, String password) {
         this.username = username;

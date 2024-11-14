@@ -24,35 +24,31 @@ public class PaymentModel {
         return code;
     }
 
-    public void setCode(long code) {
-        this.code = code;
-    }
-
     public double getPayedValue() {
         return payedValue;
-    }
-
-    public void setPayedValue(double payedValue) {
-        this.payedValue = payedValue;
     }
 
     public Date getPaymentDate() {
         return paymentDate;
     }
 
-    public void setPpaymentDate(Date paymentDate) {
-        this.paymentDate = paymentDate;
-    }
-
     public String getSale() {
         return sale;
     }
 
-    public void setSale(String sale) {
-        this.sale = sale;
+    public void setCode(long code) {
+        this.code = code;
     }
 
-    public String toString(){
-        return "code: " + code + ", Valor Pago: " + payedValue + ", Data Pagamento: " + paymentDate + ", sale: " + sale;
+    public void setPayedValue(double payedValue) {
+        this.payedValue = payedValue;
+    }
+
+    public void setPaymentDate(Date paymentDate) {
+        this.paymentDate = paymentDate;
+    }
+
+    public void setSale(String sale) {
+        this.sale = sale;
     }
 }
