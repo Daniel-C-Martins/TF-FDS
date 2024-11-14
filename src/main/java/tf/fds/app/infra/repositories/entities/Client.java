@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
+import java.util.LinkedList;
 import java.util.List;
 
 @Entity
@@ -29,11 +30,12 @@ public class Client {
     @Column(name = "signatures", nullable = true)
     private List<Signature> signatures;
 
-    public Client() {}
+    protected Client() {}
 
     public Client(String name, String email) {
         this.name = name;
         this.email = email;
+        this.signatures = new LinkedList<>();
     }
 
     public Long getCode() {

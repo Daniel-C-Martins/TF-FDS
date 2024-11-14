@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
+import java.util.LinkedList;
 import java.util.List;
 
 @Entity
@@ -28,11 +29,12 @@ public class Applicative {
     @Column(name = "signatures", nullable = true)
     private List<Signature> signatures;
 
-    public Applicative() {}
+    protected Applicative() {}
 
     public Applicative(String name, double monthlyCost) {
         this.name = name;
         this.monthlyCost = monthlyCost;
+        this.signatures = new LinkedList<>();
     }
 
     public Long getCode() {
@@ -47,7 +49,7 @@ public class Applicative {
         return monthlyCost;
     }
 
-    public List<Signature> getSubscriptions() {
+    public List<Signature> getSignatures() {
         return signatures;
     }
 
@@ -63,8 +65,7 @@ public class Applicative {
         this.monthlyCost = monthlyCost;
     }
 
-    public void setSubscriptions(List<Signature> subscriptions) {
-        this.signatures = subscriptions;
-    }
-     
+    public void setSignatures(List<Signature> signatures) {
+        this.signatures = signatures;
+    }   
 }

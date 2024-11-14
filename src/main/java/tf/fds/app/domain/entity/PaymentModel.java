@@ -1,5 +1,6 @@
 package tf.fds.app.domain.entity;
 
+import java.security.Signature;
 import java.util.Date;
 
 public class PaymentModel {
@@ -12,47 +13,53 @@ public class PaymentModel {
     private double payedValue;
     private Date paymentDate;
     private String sale;
+    private SignatureModel signature;
 
-    public PaymentModel(long code, double payedValue, Date paymentDate, String sale) {
+    public PaymentModel(long code, double payedValue, Date paymentDate, String sale, SignatureModel signatureModel) {
         this.code = code;
         this.payedValue = payedValue;
         this.paymentDate = paymentDate;
         this.sale = sale;
+        this.signature = signatureModel;
     }
 
     public long getCode() {
         return code;
     }
 
-    public void setCode(long code) {
-        this.code = code;
-    }
-
     public double getPayedValue() {
         return payedValue;
-    }
-
-    public void setPayedValue(double payedValue) {
-        this.payedValue = payedValue;
     }
 
     public Date getPaymentDate() {
         return paymentDate;
     }
 
-    public void setPpaymentDate(Date paymentDate) {
-        this.paymentDate = paymentDate;
-    }
-
     public String getSale() {
         return sale;
+    }
+
+    public SignatureModel getSignature() {
+        return signature;
+    }
+
+    public void setCode(long code) {
+        this.code = code;
+    }
+
+    public void setPayedValue(double payedValue) {
+        this.payedValue = payedValue;
+    }
+
+    public void setPaymentDate(Date paymentDate) {
+        this.paymentDate = paymentDate;
     }
 
     public void setSale(String sale) {
         this.sale = sale;
     }
 
-    public String toString(){
-        return "code: " + code + ", Valor Pago: " + payedValue + ", Data Pagamento: " + paymentDate + ", sale: " + sale;
+    public void setSignature(SignatureModel signature) {
+        this.signature = signature;
     }
 }

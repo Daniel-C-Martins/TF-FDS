@@ -42,7 +42,7 @@ public class Payment {
         this.signature = signature;
     }
 
-    public Long getCode() {
+    public long getCode() {
         return code;
     }
 
@@ -62,7 +62,7 @@ public class Payment {
         return signature;
     }
 
-    public void setCode(Long code) {
+    public void setCode(long code) {
         this.code = code;
     }
 

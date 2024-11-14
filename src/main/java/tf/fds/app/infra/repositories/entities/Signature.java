@@ -11,6 +11,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 @Entity
@@ -34,18 +35,19 @@ public class Signature {
 
     @ManyToOne
     @JoinColumn(name = "applicative_id")
-    private Applicative application;
+    private Applicative applicative;
 
     @OneToMany(mappedBy = "signature")
     private List<Payment> payments;
 
-    public Signature() {}
+    protected Signature() {}
 
-    public Signature(Date beginningDate, Date endDate, Client client, Applicative application) {
+    public Signature(Date beginningDate, Date endDate, Client client, Applicative applicative) {
         this.beginningDate = beginningDate;
         this.endDate = endDate;
         this.client = client;
-        this.application = application;
+        this.applicative= applicative;
+        this.payments = new LinkedList<>();
     }
 
     public Long getCode() {
@@ -64,8 +66,8 @@ public class Signature {
         return client;
     }
 
-    public Applicative getApplication() {
-        return application;
+    public Applicative getApplicative() {
+        return applicative;
     }
 
     public List<Payment> getPayments() {
@@ -88,8 +90,8 @@ public class Signature {
         this.client = client;
     }
 
-    public void setApplication(Applicative application) {
-        this.application = application;
+    public void setApplicative(Applicative applicative) {
+        this.applicative = applicative;
     }
 
     public void setPayments(List<Payment> payments) {
