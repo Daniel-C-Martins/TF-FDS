@@ -1,6 +1,5 @@
 package tf.fds.app.domain.entity;
 
-import java.security.Signature;
 import java.util.Date;
 
 public class PaymentModel {

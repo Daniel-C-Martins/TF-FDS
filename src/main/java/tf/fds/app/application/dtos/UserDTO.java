@@ -7,20 +7,16 @@ public class UserDTO {
     private String password;
 
     public UserDTO(UserModel userModel) {
-        this.userName = userModel.getUserName();
+        this.userName = userModel.getUsername();
         this.password = userModel.getPassword();
     }
 
-    public String getuserName() {
+    public String getUsername() {
         return userName;
     }
 
     public String getPassword() {
         return password;
-    }
-
-    public UserDTO fromModel(UserModel userModel) {
-        return new UserDTO(userModel);
     }
 
     public String toString(){
