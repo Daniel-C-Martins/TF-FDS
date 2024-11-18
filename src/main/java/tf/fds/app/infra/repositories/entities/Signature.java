@@ -10,7 +10,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -24,10 +24,10 @@ public class Signature {
     private Long code;
 
     @Column(name = "beginning_Date", nullable = false)
-    private Date beginningDate;
+    private LocalDate beginningDate;
 
     @Column(name = "end_date", nullable = false)
-    private Date endDate;
+    private LocalDate endDate;
 
     @ManyToOne
     @JoinColumn(name = "client_id")
@@ -42,7 +42,7 @@ public class Signature {
 
     protected Signature() {}
 
-    public Signature(Date beginningDate, Date endDate, Client client, Applicative applicative) {
+    public Signature(LocalDate beginningDate,LocalDate endDate, Client client, Applicative applicative) {
         this.beginningDate = beginningDate;
         this.endDate = endDate;
         this.client = client;
@@ -54,11 +54,11 @@ public class Signature {
         return code;
     }
 
-    public Date getBeginningDate() {
+    public LocalDate getBeginningDate() {
         return beginningDate;
     }
 
-    public Date getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
@@ -78,11 +78,11 @@ public class Signature {
         this.code = code;
     }
 
-    public void setBeginningDate(Date beginningDate) {
+    public void setBeginningDate(LocalDate beginningDate) {
         this.beginningDate = beginningDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 
