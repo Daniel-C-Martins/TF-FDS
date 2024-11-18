@@ -6,5 +6,4 @@ import tf.fds.app.domain.entities.ClientModel;
 
 public interface IClientRepository {
     List<ClientModel> getAllClients();
-
 }
