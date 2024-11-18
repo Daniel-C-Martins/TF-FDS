@@ -3,13 +3,13 @@ package tf.fds.app.infra.repositories.adapter;
 import java.util.LinkedList;
 import java.util.List;
 
-import tf.fds.app.domain.entity.PaymentModel;
-import tf.fds.app.domain.entity.SignatureModel;
 import tf.fds.app.infra.repositories.entities.Signature;
+import tf.fds.app.domain.entities.PaymentModel;
+import tf.fds.app.domain.entities.SignatureModel;
 import tf.fds.app.infra.repositories.entities.Payment;
 
 public class SignatureAdapter {
-   
+
     /*
      * Conversor de SignatureModel para Signature
      * @param sModel

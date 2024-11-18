@@ -2,7 +2,7 @@ package tf.fds.app.application.dtos;
 
 import java.util.Date;
 
-import tf.fds.app.domain.entity.PaymentModel;
+import tf.fds.app.domain.entities.PaymentModel;
 
 public class PaymentDTO {
     private long code;

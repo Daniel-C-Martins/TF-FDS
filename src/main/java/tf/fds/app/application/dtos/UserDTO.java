@@ -1,6 +1,6 @@
 package tf.fds.app.application.dtos;
 
-import tf.fds.app.domain.entity.UserModel;
+import tf.fds.app.domain.entities.UserModel;
 
 public class UserDTO {
     private String userName;

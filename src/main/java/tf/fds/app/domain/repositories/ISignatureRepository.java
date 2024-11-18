@@ -2,10 +2,10 @@ package tf.fds.app.domain.repositories;
 
 import java.util.List;
 
-import tf.fds.app.domain.entity.SignatureModel;
-import tf.fds.app.domain.entity.SignatureModel.SignatureTypes;
+import tf.fds.app.domain.entities.SignatureModel;
+import tf.fds.app.domain.entities.SignatureModel.SignatureTypes;
 
-public interface SignatureRepository {
+public interface ISignatureRepository {
     boolean createSignature(SignatureModel signature);
     boolean isActive(long codass);
     List<SignatureModel> getAllSignatures();

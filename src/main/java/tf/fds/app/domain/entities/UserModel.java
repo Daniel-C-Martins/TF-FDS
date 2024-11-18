@@ -1,4 +1,4 @@
-package tf.fds.app.domain.entity;
+package tf.fds.app.domain.entities;
 
 public class UserModel {
     private String username;

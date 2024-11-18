@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
-import tf.fds.app.domain.entity.SignatureModel;
+import tf.fds.app.domain.entities.SignatureModel;
 
 public class SignatureDTO {
     private long code;

@@ -1,10 +1,10 @@
 package tf.fds.app.infra.repositories.adapter;
 
-import tf.fds.app.domain.entity.PaymentModel;
+import tf.fds.app.domain.entities.PaymentModel;
 import tf.fds.app.infra.repositories.entities.Payment;
 
 public class PaymentAdapter {
-    
+
     /*
      * Conversor de PaymentModel para Payment
      * @param pModel
@@ -26,7 +26,7 @@ public class PaymentAdapter {
      * Mapea os objetos de Payment para PaymentModel
      */
     public static PaymentModel toPaymentModel(Payment pay){
-        PaymentModel pModel= new PaymentModel(pay.getCode(), pay.getPayedValue(), pay.getPaymentDate(), pay.getSale(), SignatureAdapter.toSignatureModel(pay.getSignature())); 
+        PaymentModel pModel= new PaymentModel(pay.getCode(), pay.getPayedValue(), pay.getPaymentDate(), pay.getSale(), SignatureAdapter.toSignatureModel(pay.getSignature()));
         pModel.setCode(pay.getCode());
         return pModel;
     }

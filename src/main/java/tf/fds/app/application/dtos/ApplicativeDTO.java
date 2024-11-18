@@ -3,7 +3,7 @@ package tf.fds.app.application.dtos;
 import java.util.LinkedList;
 import java.util.List;
 
-import tf.fds.app.domain.entity.ApplicativeModel;
+import tf.fds.app.domain.entities.ApplicativeModel;
 
 public class ApplicativeDTO {
     private long code;

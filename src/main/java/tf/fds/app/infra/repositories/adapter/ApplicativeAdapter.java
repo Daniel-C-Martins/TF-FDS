@@ -3,13 +3,13 @@ package tf.fds.app.infra.repositories.adapter;
 import java.util.LinkedList;
 import java.util.List;
 
-import tf.fds.app.domain.entity.ApplicativeModel;
-import tf.fds.app.domain.entity.SignatureModel;
+import tf.fds.app.domain.entities.ApplicativeModel;
+import tf.fds.app.domain.entities.SignatureModel;
 import tf.fds.app.infra.repositories.entities.Applicative;
 import tf.fds.app.infra.repositories.entities.Signature;
 
 public class ApplicativeAdapter {
-    
+
     /*
      * Conversor de ApplicativeModel para Applicative
      * @param aModel

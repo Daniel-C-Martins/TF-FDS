@@ -1,4 +1,4 @@
-package tf.fds.app.domain.entity;
+package tf.fds.app.domain.entities;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -12,8 +12,8 @@ public class ClientModel {
     public ClientModel(long code, String name, String email) {
         this.code = code;
         this.name = name;
-        this.email = email; 
-        this.signatures = new LinkedList<SignatureModel>(); 
+        this.email = email;
+        this.signatures = new LinkedList<SignatureModel>();
     }
 
     public long getCode() {
