@@ -1,5 +1,6 @@
 package tf.fds.app.application.dtos;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -8,8 +9,8 @@ import tf.fds.app.domain.entities.SignatureModel;
 
 public class SignatureDTO {
     private long code;
-    private Date beginningDate;
-    private Date endDate;
+    private LocalDate beginningDate;
+    private LocalDate endDate;
     private ClientDTO client;
     private ApplicativeDTO applicative;
     private List<PaymentDTO> payments;
@@ -31,11 +32,11 @@ public class SignatureDTO {
         return code;
     }
 
-    public Date getBeginningDate() {
+    public LocalDate getBeginningDate() {
         return beginningDate;
     }
 
-    public Date getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
@@ -55,11 +56,11 @@ public class SignatureDTO {
         this.code = code;
     }
 
-    public void setBeginningDate(Date beginningDate) {
+    public void setBeginningDate(LocalDate beginningDate) {
         this.beginningDate = beginningDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 

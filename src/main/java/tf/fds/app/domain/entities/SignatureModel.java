@@ -1,6 +1,6 @@
 package tf.fds.app.domain.entities;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,13 +12,13 @@ public class SignatureModel {
     }
 
     private long code;
-    private Date beginningDate;
-    private Date endDate;
+    private LocalDate beginningDate;
+    private LocalDate endDate;
     private ClientModel client;
     private ApplicativeModel applicative;
     private List<PaymentModel> payments;
 
-    public SignatureModel(long code, Date beginningDate, Date endDate, ClientModel client, ApplicativeModel applicative) {
+    public SignatureModel(long code, LocalDate beginningDate, LocalDate endDate, ClientModel client, ApplicativeModel applicative) {
         this.code = code;
         this.beginningDate = beginningDate;
         this.endDate = endDate;
@@ -31,11 +31,11 @@ public class SignatureModel {
         return code;
     }
 
-    public Date getBeginningDate() {
+    public LocalDate getBeginningDate() {
         return beginningDate;
     }
 
-    public Date getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
@@ -55,11 +55,11 @@ public class SignatureModel {
         this.code = code;
     }
 
-    public void setBeginningDate(Date beginningDate) {
+    public void setBeginningDate(LocalDate beginningDate) {
         this.beginningDate = beginningDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 
