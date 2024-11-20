@@ -32,3 +32,4 @@
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/infra/repositories/entities/Signature.java
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/infra/repositories/entities/User.java
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/infra/repositories/implemRepositories/ClientJPA.java
+/mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/infra/repositories/implemRepositories/SignatureJPA.java
