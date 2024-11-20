@@ -1,19 +1,20 @@
 package tf.fds.app.domain.services;
 
 import tf.fds.app.domain.repositories.IClientRepository;
-import java.util.*;
 import tf.fds.app.domain.entities.ClientModel;
+import java.util.*;
+import org.springframework.stereotype.Service;
 
 @Service
 public class ClientService {
-    private IClientRepository clients;
+    private IClientRepository clientRep;
 
     //@Autowired
-    public ClientService(IClientRepository clients){
-        this.clients = clients;
+    public ClientService(IClientRepository clientRep){
+        this.clientRep = clientRep;
     }
 
     public List<ClientModel> getAllClients(){
-        return clients.getAllClients();
+        return clientRep.getAllClients();
     }
 }

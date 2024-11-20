@@ -1,7 +1,10 @@
 package tf.fds.app.application.useCases;
 
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
 import tf.fds.app.application.dtos.ClientDTO;
-import tf.fds.app.domain.entities.ClientModel;
 import tf.fds.app.domain.services.ClientService;
 
 @Component
@@ -13,8 +16,8 @@ public class GetAllClientsUC {
         this.clientService = clientService;
     }
     
-    public ClientDTO run(){
-        ClientModel clients = clientService.getAllClients();
+    public List<ClientDTO> run(){
+        List<ClientDTO> clients = clientService.getAllClients().stream().map(c -> new ClientDTO(c)).toList();
         return clients;
     }
 }
