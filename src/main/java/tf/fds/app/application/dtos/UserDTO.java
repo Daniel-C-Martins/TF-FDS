@@ -3,12 +3,18 @@ package tf.fds.app.application.dtos;
 import tf.fds.app.domain.entities.UserModel;
 
 public class UserDTO {
+    private long code;
     private String userName;
     private String password;
 
     public UserDTO(UserModel userModel) {
+        this.code = userModel.getCode();
         this.userName = userModel.getUsername();
         this.password = userModel.getPassword();
+    }
+
+    public long getCode() {
+        return code;
     }
 
     public String getUsername() {
@@ -20,6 +26,6 @@ public class UserDTO {
     }
 
     public String toString(){
-        return "userName: " + userName + ", password: " + password;
+        return "Code:" + code + "userName: " + userName + ", password: " + password;
     }
 }
