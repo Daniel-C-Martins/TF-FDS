@@ -7,8 +7,8 @@ tf/fds/app/infra/repositories/InterfJPA/Applicative_ItfRep.class
 tf/fds/app/infra/controllers/Controller.class
 tf/fds/app/infra/repositories/adapter/ClientAdapter.class
 tf/fds/app/domain/entities/ClientModel.class
-tf/fds/app/infra/repositories/entities/Payment.class
 tf/fds/app/application/useCases/GetAllClientsUC.class
+tf/fds/app/infra/repositories/entities/Payment.class
 tf/fds/app/domain/repositories/IApplicativeRepository.class
 tf/fds/app/infra/repositories/InterfJPA/Client_ItfRep.class
 tf/fds/app/infra/repositories/InterfJPA/User_ItfRep.class
@@ -26,11 +26,11 @@ tf/fds/app/infra/repositories/implemRepositories/SignatureJPA.class
 tf/fds/app/domain/entities/PaymentModel.class
 tf/fds/app/application/dtos/ClientDTO.class
 tf/fds/app/infra/repositories/InterfJPA/Signature_ItfRep.class
+tf/fds/app/application/dtos/ApplicativeDTO.class
 tf/fds/app/domain/entities/ApplicativeModel.class
 tf/fds/app/infra/repositories/entities/Signature.class
-tf/fds/app/application/dtos/ApplicativeDTO.class
-tf/fds/app/infra/repositories/entities/User.class
 tf/fds/app/infra/repositories/entities/Applicative.class
+tf/fds/app/infra/repositories/entities/User.class
 tf/fds/app/application/dtos/UserDTO.class
 tf/fds/app/domain/entities/UserModel.class
 tf/fds/app/domain/services/ClientService.class

@@ -23,4 +23,8 @@ INSERT INTO applicative (name, monthly_cost) VALUES ('Deezer', 19.99);
 
 
 -- Assinaturas
--- INSERT INTO signature (beginning_Date, end_date, client_id, applicative_id) VALUES ('2024-11-16', '2024-12-16', 1, 1);
+INSERT INTO signature (beginning_Date, end_date, client_id, applicative_id) VALUES ('2024-11-16', '2024-12-16', 1, 1);
+INSERT INTO signature (beginning_Date, end_date, client_id, applicative_id) VALUES ('2024-11-16', '2024-12-16', 2, 2);
+INSERT INTO signature (beginning_Date, end_date, client_id, applicative_id) VALUES ('2024-11-16', '2024-12-16', 3, 3);
+INSERT INTO signature (beginning_Date, end_date, client_id, applicative_id) VALUES ('2024-11-16', '2024-12-16', 4, 4);
+INSERT INTO signature (beginning_Date, end_date, client_id, applicative_id) VALUES ('2024-11-16', '2024-12-16', 5, 5);
