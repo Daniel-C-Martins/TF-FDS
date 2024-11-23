@@ -5,16 +5,18 @@ import java.util.List;
 import tf.fds.app.domain.entities.PaymentModel;
 import tf.fds.app.domain.repositories.IPaymentRepository;
 import tf.fds.app.infra.repositories.InterfJPA.Payment_ItfRep;
+import tf.fds.app.infra.repositories.adapter.PaymentAdapter;
 
 public class PaymentJPA implements IPaymentRepository{
-    private Payment_ItfRep payment;
+    private Payment_ItfRep payments;
 
-    public PaymentJPA(Payment_ItfRep payment) {
-        this.payment = payment;
+    public PaymentJPA(Payment_ItfRep payments) {
+        this.payments = payments;
     }
 
     @Override
-    public PaymentModel registerPayment(PaymentModel payment, long codass) {
-        return;
+    public PaymentModel registerPayment(PaymentModel payment) {
+        payments.save(PaymentAdapter.fromPaymentModel(payment));
+        return payment;
     }
 }
