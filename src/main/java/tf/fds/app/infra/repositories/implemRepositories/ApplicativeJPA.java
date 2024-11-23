@@ -16,13 +16,18 @@ public class ApplicativeJPA implements IApplicativeRepository {
     }
 
     @Override
-    public ApplicativeModel updateMonthlyCost(float newCost, Long id) {
+    public ApplicativeModel updateMonthlyCost(double newCost, Long id) {
         Applicative app = applicatives.findById(id).orElse(null);
-        if (app == null){
+        if (app == null) {
             throw new IllegalArgumentException("Aplicativo inexistente");
         }
         app.setMonthlyCost(newCost);
         applicatives.save(app);
         return ApplicativeAdapter.toApplicativeModel(app);
+    }
+
+    @Override
+    public List<ApplicativeModel> getAllApplicatives() {
+        return applicatives.findAll().stream().map(a -> ApplicativeAdapter.toApplicativeModel(a)).toList();
     }
 }
