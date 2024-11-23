@@ -5,3 +5,4 @@ import tf.fds.app.domain.entities.PaymentModel;
 public interface IPaymentRepository {
     PaymentModel registerPayment(PaymentModel payment, long codass);
 }
+
