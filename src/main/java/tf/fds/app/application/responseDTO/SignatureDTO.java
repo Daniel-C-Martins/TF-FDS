@@ -1,4 +1,4 @@
-package tf.fds.app.application.dtos;
+package tf.fds.app.application.responseDTO;
 
 import java.time.LocalDate;
 import tf.fds.app.domain.entities.SignatureModel;

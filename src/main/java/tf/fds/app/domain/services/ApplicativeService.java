@@ -22,4 +22,8 @@ public class ApplicativeService {
     public ApplicativeModel updateMonthlyCost(double newCost, Long id ){
         return applicativeRep.updateMonthlyCost(newCost, id);
     }
+
+    public ApplicativeModel getApplicativeById(long applicativeId){
+        return applicativeRep.getApplicativeById(applicativeId);
+    }
 }

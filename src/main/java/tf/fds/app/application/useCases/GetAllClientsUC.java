@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import tf.fds.app.application.dtos.ClientDTO;
+import tf.fds.app.application.responseDTO.ClientDTO;
 import tf.fds.app.domain.services.ClientService;
 
 @Component

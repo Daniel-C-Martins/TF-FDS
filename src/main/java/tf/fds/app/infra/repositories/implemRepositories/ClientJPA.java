@@ -22,4 +22,9 @@ public class ClientJPA implements IClientRepository {
     public List<ClientModel> getAllClients() {
         return clientRep.findAll().stream().map(c -> ClientAdapter.toClientModel(c)).toList();
     }
+
+    @Override
+    public ClientModel getClientById(long clientId) {
+        return ClientAdapter.toClientModel(clientRep.findById(clientId).orElse(null));
+    }
 }

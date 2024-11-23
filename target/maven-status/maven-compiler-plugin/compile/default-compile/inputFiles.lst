@@ -4,6 +4,7 @@
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/application/dtos/PaymentDTO.java
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/application/dtos/SignatureDTO.java
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/application/dtos/UserDTO.java
+/mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/application/useCases/CreateSignatureUC.java
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/application/useCases/GetAllClientsUC.java
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/domain/entities/ApplicativeModel.java
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/domain/entities/ClientModel.java
@@ -34,5 +35,7 @@
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/infra/repositories/entities/Payment.java
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/infra/repositories/entities/Signature.java
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/infra/repositories/entities/User.java
+/mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/infra/repositories/implemRepositories/ApplicativeJPA.java
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/infra/repositories/implemRepositories/ClientJPA.java
+/mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/infra/repositories/implemRepositories/PaymentJPA.java
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/infra/repositories/implemRepositories/SignatureJPA.java

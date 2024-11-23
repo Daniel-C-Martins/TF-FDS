@@ -1,4 +1,4 @@
-package tf.fds.app.application.dtos;
+package tf.fds.app.application.responseDTO;
 
 import tf.fds.app.domain.entities.UserModel;
 

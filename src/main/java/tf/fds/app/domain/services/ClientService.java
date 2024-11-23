@@ -19,4 +19,8 @@ public class ClientService {
     public List<ClientModel> getAllClients(){
         return clientRep.getAllClients();
     }
+
+    public ClientModel getClientById(long clientId){
+        return clientRep.getClientById(clientId);
+    }
 }

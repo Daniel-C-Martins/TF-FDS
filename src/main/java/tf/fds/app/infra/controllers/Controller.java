@@ -9,17 +9,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import tf.fds.app.application.dtos.ApplicativeDTO;
-import tf.fds.app.application.dtos.ClientDTO;
-import tf.fds.app.application.dtos.SignatureDTO;
+import tf.fds.app.application.requestDTO.RequestSignDTO;
+import tf.fds.app.application.responseDTO.ApplicativeDTO;
+import tf.fds.app.application.responseDTO.ClientDTO;
+import tf.fds.app.application.responseDTO.SignatureDTO;
+import tf.fds.app.application.useCases.CreateSignatureUC;
 import tf.fds.app.application.useCases.GetAllClientsUC;
 
 @RestController
 public class Controller {
     private GetAllClientsUC getAllClients;
+    private CreateSignatureUC createSignature;
 
-    public Controller (GetAllClientsUC getAllClients){
+    public Controller (GetAllClientsUC getAllClients, CreateSignatureUC createSignature){
         this.getAllClients = getAllClients;
+        this.createSignature = createSignature;
     }
 
     @GetMapping("")
@@ -40,11 +44,11 @@ public class Controller {
     //     //TODO
     // }
 
-    // @PostMapping("/servcad/assinaturas")
-    // @CrossOrigin(origins = "*")
-    // public SignatureDTO createSubscription(@RequestBody long clientId, long applicativeId){
-    //     //TODO
-    // }
+    @PostMapping("/servcad/assinaturas")
+    @CrossOrigin(origins = "*")
+    public SignatureDTO createSignature(@RequestBody RequestSignDTO signature){
+        return createSignature.run(signature.getClientCode(), signature.getApplicativeCode());
+    }
 
     // @PostMapping("/servcad/aplicativos/atualizacusto/:idAplicativo")
     // @CrossOrigin(origins = "*")
