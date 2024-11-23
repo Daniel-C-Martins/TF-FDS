@@ -9,21 +9,25 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import tf.fds.app.application.requestDTO.RequestCostDTO;
 import tf.fds.app.application.requestDTO.RequestSignDTO;
 import tf.fds.app.application.responseDTO.ApplicativeDTO;
 import tf.fds.app.application.responseDTO.ClientDTO;
 import tf.fds.app.application.responseDTO.SignatureDTO;
 import tf.fds.app.application.useCases.CreateSignatureUC;
 import tf.fds.app.application.useCases.GetAllClientsUC;
+import tf.fds.app.application.useCases.UpdateCostUC;
 
 @RestController
 public class Controller {
     private GetAllClientsUC getAllClients;
     private CreateSignatureUC createSignature;
+    private UpdateCostUC updateCost;
 
-    public Controller (GetAllClientsUC getAllClients, CreateSignatureUC createSignature){
+    public Controller (GetAllClientsUC getAllClients, CreateSignatureUC createSignature, UpdateCostUC updateCost){
         this.getAllClients = getAllClients;
         this.createSignature = createSignature;
+        this.updateCost = updateCost;
     }
 
     @GetMapping("")
@@ -50,11 +54,11 @@ public class Controller {
         return createSignature.run(signature.getClientCode(), signature.getApplicativeCode());
     }
 
-    // @PostMapping("/servcad/aplicativos/atualizacusto/:idAplicativo")
-    // @CrossOrigin(origins = "*")
-    // public ApplicativeDTO updateApplicativeCost(@PathVariable long applicativeId, @RequestBody double cost){
-    //     //TODO
-    // }
+    @PostMapping("/servcad/aplicativos/atualizacusto/{applicativeId}")
+    @CrossOrigin(origins = "*")
+    public ApplicativeDTO updateApplicativeCost(@PathVariable long applicativeId, @RequestBody RequestCostDTO cost){
+        return updateCost.run(cost.getNewCost(), applicativeId);
+    }
 
     // @GetMapping("/servcad/assinaturas/{tipo}")
     // @CrossOrigin(origins = "*")

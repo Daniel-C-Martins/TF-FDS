@@ -2,6 +2,7 @@ package tf.fds.app.domain.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tf.fds.app.domain.entities.ApplicativeModel;
 import tf.fds.app.domain.repositories.IApplicativeRepository;
@@ -10,7 +11,7 @@ import tf.fds.app.domain.repositories.IApplicativeRepository;
 public class ApplicativeService {
     private IApplicativeRepository applicativeRep;
 
-    //@Autowired
+    @Autowired
     public ApplicativeService(IApplicativeRepository applicativeRep){
         this.applicativeRep = applicativeRep;
     }
