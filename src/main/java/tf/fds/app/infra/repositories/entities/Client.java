@@ -5,12 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-
-import java.util.LinkedList;
-import java.util.List;
-
 @Entity
 @Table(name = "client")
 public class Client {
@@ -26,17 +21,7 @@ public class Client {
     @Column(name = "email", nullable = false)
     private String email;
 
-    @OneToMany(mappedBy = "client")
-    @Column(name = "signatures", nullable = true)
-    private List<Signature> signatures;
-
-    protected Client() {}
-
-    public Client(String name, String email) {
-        this.name = name;
-        this.email = email;
-        this.signatures = new LinkedList<>();
-    }
+    public Client() {}
 
     public Long getCode() {
         return code;
@@ -50,10 +35,6 @@ public class Client {
         return email;
     }
 
-    public List<Signature> getSignatures() {
-        return signatures;
-    }
-
     public void setCode(Long code) {
         this.code = code;
     }
@@ -64,9 +45,5 @@ public class Client {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public void setSignatures(List<Signature> signatures) {
-        this.signatures = signatures;
     }
 }

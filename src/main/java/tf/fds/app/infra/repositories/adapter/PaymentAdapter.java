@@ -13,8 +13,12 @@ public class PaymentAdapter {
      * Mapea os objetos de PaymentModel para Payment
      */
     public static Payment fromPaymentModel(PaymentModel pModel){
-        Payment pay = new Payment(pModel.getPayedValue(), pModel.getPaymentDate(), pModel.getSale(), SignatureAdapter.fromSignatureModel(pModel.getSignature()));
+        Payment pay = new Payment();
         pay.setCode(pModel.getCode());
+        pay.setPayedValue(pModel.getPayedValue());
+        pay.setPaymentDate(pModel.getPaymentDate());
+        pay.setSale(pModel.getSale());
+        pay.setSignature(SignatureAdapter.fromSignatureModel(pModel.getSignature()));
         return pay;
     }
 
@@ -26,8 +30,12 @@ public class PaymentAdapter {
      * Mapea os objetos de Payment para PaymentModel
      */
     public static PaymentModel toPaymentModel(Payment pay){
-        PaymentModel pModel= new PaymentModel(pay.getCode(), pay.getPayedValue(), pay.getPaymentDate(), pay.getSale(), SignatureAdapter.toSignatureModel(pay.getSignature()));
+        PaymentModel pModel = new PaymentModel();
         pModel.setCode(pay.getCode());
+        pModel.setPayedValue(pay.getPayedValue());
+        pModel.setPaymentDate(pay.getPaymentDate());
+        pModel.setSale(pay.getSale());
+        pModel.setSignature(SignatureAdapter.toSignatureModel(pay.getSignature()));
         return pModel;
     }
 }

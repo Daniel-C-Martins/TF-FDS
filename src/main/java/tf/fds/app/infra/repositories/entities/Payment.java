@@ -1,5 +1,7 @@
 package tf.fds.app.infra.repositories.entities;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,8 +10,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-
-import java.util.Date;
 
 @Entity
 @Table(name = "payment")
@@ -24,7 +24,7 @@ public class Payment {
     private double payedValue;
 
     @Column(name = "payment_date", nullable = false)
-    private Date paymentDate;
+    private LocalDate paymentDate;
 
     @Column(name = "sale", nullable = true)
     private String sale;
@@ -35,13 +35,6 @@ public class Payment {
 
     public Payment() {}
 
-    public Payment(double payedValue, Date paymentDate, String sale, Signature signature) {
-        this.payedValue = payedValue;
-        this.paymentDate = paymentDate;
-        this.sale = sale;
-        this.signature = signature;
-    }
-
     public long getCode() {
         return code;
     }
@@ -50,7 +43,7 @@ public class Payment {
         return payedValue;
     }
 
-    public Date getPaymentDate() {
+    public LocalDate getPaymentDate() {
         return paymentDate;
     }
 
@@ -70,7 +63,7 @@ public class Payment {
         this.payedValue = payedValue;
     }
 
-    public void setPaymentDate(Date paymentDate) {
+    public void setPaymentDate(LocalDate paymentDate) {
         this.paymentDate = paymentDate;
     }
 

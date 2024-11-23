@@ -5,10 +5,7 @@ public class UserModel {
     private String username;
     private String password;
 
-    public UserModel(long code, String username, String password) {
-        this.code = code;
-        this.username = username;
-        this.password = password;
+    public UserModel() {
     }
 
     public long getCode() {

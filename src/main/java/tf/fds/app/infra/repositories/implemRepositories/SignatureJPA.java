@@ -4,12 +4,15 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.stereotype.Repository;
+
 import tf.fds.app.domain.entities.SignatureModel;
 import tf.fds.app.domain.repositories.ISignatureRepository;
 import tf.fds.app.infra.repositories.InterfJPA.Signature_ItfRep;
 import tf.fds.app.infra.repositories.adapter.SignatureAdapter;
 import tf.fds.app.infra.repositories.entities.Signature;
 
+@Repository
 public class SignatureJPA implements ISignatureRepository {
     private Signature_ItfRep signatureRep;
 

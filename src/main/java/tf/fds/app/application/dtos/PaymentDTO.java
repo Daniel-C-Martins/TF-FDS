@@ -1,13 +1,13 @@
 package tf.fds.app.application.dtos;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import tf.fds.app.domain.entities.PaymentModel;
 
 public class PaymentDTO {
     private long code;
     private double payedValue;
-    private Date paymentDate;
+    private LocalDate paymentDate;
     private String sale;
     private SignatureDTO signature;
 
@@ -27,7 +27,7 @@ public class PaymentDTO {
         return payedValue;
     }
 
-    public Date getPaymentDate() {
+    public LocalDate getPaymentDate() {
         return paymentDate;
     }
 
@@ -37,26 +37,6 @@ public class PaymentDTO {
 
     public SignatureDTO getSignature() {
         return signature;
-    }
-
-    public void setCode(long code) {
-        this.code = code;
-    }
-
-    public void setPayedValue(double payedValue) {
-        this.payedValue = payedValue;
-    }
-
-    public void setPaymentDate(Date paymentDate) {
-        this.paymentDate = paymentDate;
-    }
-
-    public void setSale(String sale) {
-        this.sale = sale;
-    }
-
-    public void setSignature(SignatureDTO signature) {
-        this.signature = signature;
     }
 
     @Override

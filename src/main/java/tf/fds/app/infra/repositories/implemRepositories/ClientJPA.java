@@ -1,12 +1,11 @@
 package tf.fds.app.infra.repositories.implemRepositories;
 
+import java.util.List;
+
 import tf.fds.app.domain.entities.ClientModel;
 import tf.fds.app.domain.repositories.IClientRepository;
 import tf.fds.app.infra.repositories.InterfJPA.Client_ItfRep;
 import tf.fds.app.infra.repositories.adapter.ClientAdapter;
-
-import java.util.*;
-
 import org.springframework.stereotype.Repository;
 
 @Repository

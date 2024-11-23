@@ -1,5 +1,5 @@
-tf/fds/app/domain/repositories/IPaymentRepository.class
 tf/fds/app/domain/entities/SignatureModel.class
+tf/fds/app/domain/repositories/IPaymentRepository.class
 tf/fds/app/domain/repositories/ISignatureRepository.class
 tf/fds/app/infra/repositories/adapter/PaymentAdapter.class
 tf/fds/app/domain/entities/PaymentModel$PaymentStatus.class
@@ -33,5 +33,5 @@ tf/fds/app/infra/repositories/entities/Applicative.class
 tf/fds/app/infra/repositories/entities/User.class
 tf/fds/app/application/dtos/UserDTO.class
 tf/fds/app/domain/entities/UserModel.class
-tf/fds/app/domain/services/ClientService.class
 tf/fds/app/AppApplication.class
+tf/fds/app/domain/services/ClientService.class

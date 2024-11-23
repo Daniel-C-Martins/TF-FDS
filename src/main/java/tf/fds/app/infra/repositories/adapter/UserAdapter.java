@@ -12,7 +12,11 @@ public class UserAdapter {
      * Cria um objeto User a partir de um objeto UserModel
      */
     public static User fromUserModel(UserModel usModel){
-        return new User(usModel.getCode(), usModel.getUsername(), usModel.getPassword());
+        User user = new User();
+        user.setCode(usModel.getCode());
+        user.setUsername(usModel.getUsername());
+        user.setPassword(usModel.getPassword());
+        return user;
     }
 
     /*
@@ -22,7 +26,11 @@ public class UserAdapter {
      * Cria um objeto UserModel a partir de um objeto User
      */
     public static UserModel toUserModel(User user){
-        return new UserModel(user.getCode(), user.getUsername(), user.getPassword());
+        UserModel usModel = new UserModel();
+        usModel.setCode(user.getCode());
+        usModel.setUsername(user.getUsername());
+        usModel.setPassword(user.getPassword());
+        return usModel;
     }
 
 }

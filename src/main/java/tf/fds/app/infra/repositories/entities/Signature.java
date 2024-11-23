@@ -1,5 +1,7 @@
 package tf.fds.app.infra.repositories.entities;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,12 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-
-import java.time.LocalDate;
-import java.util.LinkedList;
-import java.util.List;
 
 @Entity
 @Table(name = "signature")
@@ -37,18 +34,7 @@ public class Signature {
     @JoinColumn(name = "applicative_id")
     private Applicative applicative;
 
-    @OneToMany(mappedBy = "signature")
-    private List<Payment> payments;
-
-    protected Signature() {}
-
-    public Signature(LocalDate beginningDate,LocalDate endDate, Client client, Applicative applicative) {
-        this.beginningDate = beginningDate;
-        this.endDate = endDate;
-        this.client = client;
-        this.applicative= applicative;
-        this.payments = new LinkedList<>();
-    }
+    public Signature() {}
 
     public Long getCode() {
         return code;
@@ -70,10 +56,6 @@ public class Signature {
         return applicative;
     }
 
-    public List<Payment> getPayments() {
-        return payments;
-    }
-
     public void setCode(Long code) {
         this.code = code;
     }
@@ -92,9 +74,5 @@ public class Signature {
 
     public void setApplicative(Applicative applicative) {
         this.applicative = applicative;
-    }
-
-    public void setPayments(List<Payment> payments) {
-        this.payments = payments;
     }
 }

@@ -21,13 +21,7 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
 
-    protected User() {}
-
-    public User(long code, String username, String password) {
-        this.code = code;
-        this.username = username;
-        this.password = password;
-    }
+    public User() {}
 
     public long getCode() {
         return code;

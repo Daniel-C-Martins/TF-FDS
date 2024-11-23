@@ -1,6 +1,6 @@
 package tf.fds.app.domain.entities;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class PaymentModel {
     public enum PaymentStatus {
@@ -10,16 +10,11 @@ public class PaymentModel {
 
     private long code;
     private double payedValue;
-    private Date paymentDate;
+    private LocalDate paymentDate;
     private String sale;
     private SignatureModel signature;
 
-    public PaymentModel(long code, double payedValue, Date paymentDate, String sale, SignatureModel signatureModel) {
-        this.code = code;
-        this.payedValue = payedValue;
-        this.paymentDate = paymentDate;
-        this.sale = sale;
-        this.signature = signatureModel;
+    public PaymentModel() {
     }
 
     public long getCode() {
@@ -30,7 +25,7 @@ public class PaymentModel {
         return payedValue;
     }
 
-    public Date getPaymentDate() {
+    public LocalDate getPaymentDate() {
         return paymentDate;
     }
 
@@ -50,7 +45,7 @@ public class PaymentModel {
         this.payedValue = payedValue;
     }
 
-    public void setPaymentDate(Date paymentDate) {
+    public void setPaymentDate(LocalDate paymentDate) {
         this.paymentDate = paymentDate;
     }
 
