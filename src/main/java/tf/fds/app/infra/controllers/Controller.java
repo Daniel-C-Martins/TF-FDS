@@ -20,6 +20,7 @@ import tf.fds.app.application.useCases.GetAllClientsUC;
 import tf.fds.app.application.useCases.GetSignaturesForAppUC;
 import tf.fds.app.application.useCases.GetSignaturesForClientUC;
 import tf.fds.app.application.useCases.UpdateCostUC;
+import tf.fds.app.application.useCases.ValidSignatureUC;
 
 @RestController
 public class Controller {
@@ -29,16 +30,18 @@ public class Controller {
     private GetSignaturesForClientUC getSignaturesForClient;
     private GetAllApplicativesUC getAllApplicatives;
     private GetSignaturesForAppUC getSignaturesForApp;
+    private ValidSignatureUC validSignature;
 
     public Controller(GetAllClientsUC getAllClients, CreateSignatureUC createSignature, UpdateCostUC updateCost,
             GetSignaturesForClientUC getSignaturesForClient, GetAllApplicativesUC getAllApplicatives,
-            GetSignaturesForAppUC getSignaturesForApp) {
+            GetSignaturesForAppUC getSignaturesForApp, ValidSignatureUC validSignature) {
         this.getAllClients = getAllClients;
         this.createSignature = createSignature;
         this.updateCost = updateCost;
         this.getSignaturesForClient = getSignaturesForClient;
         this.getAllApplicatives = getAllApplicatives;
         this.getSignaturesForApp = getSignaturesForApp;
+        this.validSignature = validSignature;
     }
 
     @GetMapping("")
@@ -99,9 +102,9 @@ public class Controller {
     // // Status sendo PAGAMENTO_OK, VALOR_INCORRETO
     // }
 
-    // @GetMapping("/assinvalida/:codass")
-    // @CrossOrigin(origins = "*")
-    // public boolean isSubscriptionValid(@PathVariable long signatureCode){
-    // //TODO
-    // }
+    @GetMapping("/assinvalida/{signatureCode}")
+    @CrossOrigin(origins = "*")
+    public boolean isSignatureValid(@PathVariable long signatureCode) {
+        return validSignature.run(signatureCode);
+    }
 }

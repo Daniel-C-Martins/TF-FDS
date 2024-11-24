@@ -2,7 +2,6 @@ package tf.fds.app.infra.repositories.implemRepositories;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
 
@@ -36,13 +35,13 @@ public class SignatureJPA implements ISignatureRepository {
      * Verifica se a assinatura está ativa
      * @param codass
      * @return boolean
-     * Pesquisa a assinatura pelo código e verifica se a data de término é anterior a data atual
+     * Pesquisa a assinatura pelo código e verifica se a data de término é posterior a data atual
      */
     @Override
     public boolean isActive(long codass) {
         Signature sign = signatureRep.findById(codass).orElse(null);
 
-        if (sign.getEndDate().isBefore(LocalDate.now())) {
+        if (sign.getEndDate().isAfter(LocalDate.now())) {
             return true;
         } else {
             return false;
@@ -81,5 +80,16 @@ public class SignatureJPA implements ISignatureRepository {
     public List<SignatureModel> getSignaturesByApp(long codapp) {
         List<Signature> sign = signatureRep.findAll().stream().filter(s -> s.getApplicative().getCode() == codapp).toList();
         return sign.stream().map(s -> SignatureAdapter.toSignatureModel(s)).toList();
+    }
+
+    /*
+     * Retorna uma assinatura pelo código
+     * @param codass
+     * @return SignatureModel
+     * Pesquisa a assinatura pelo código e mapeia para SignatureModel
+     */
+    @Override
+    public SignatureModel getSignatureById(long codass) {
+        return SignatureAdapter.toSignatureModel(signatureRep.findById(codass).orElse(null));
     }
 }

@@ -10,4 +10,5 @@ public interface ISignatureRepository {
     List<SignatureModel> getAllSignatures();
     List<SignatureModel> getSignaturesByClient(long codcli);
     List<SignatureModel> getSignaturesByApp(long codapp);
+   SignatureModel getSignatureById(long codass);
 }

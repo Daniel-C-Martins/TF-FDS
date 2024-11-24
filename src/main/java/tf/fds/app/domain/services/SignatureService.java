@@ -36,4 +36,8 @@ public class SignatureService {
    public List<SignatureModel> getSignaturesByApp(long codapp){
       return signatureRep.getSignaturesByApp(codapp);
    }
+
+   public SignatureModel getSignatureById(long codass){
+      return signatureRep.getSignatureById(codass);
+   }
 }
