@@ -19,6 +19,7 @@ import tf.fds.app.application.responseDTO.SignatureDTO;
 import tf.fds.app.application.useCases.CreateSignatureUC;
 import tf.fds.app.application.useCases.GetAllApplicativesUC;
 import tf.fds.app.application.useCases.GetAllClientsUC;
+import tf.fds.app.application.useCases.GetSignatureTypes;
 import tf.fds.app.application.useCases.GetSignaturesForAppUC;
 import tf.fds.app.application.useCases.GetSignaturesForClientUC;
 import tf.fds.app.application.useCases.RegisterPaymentUC;
@@ -35,10 +36,11 @@ public class Controller {
     private GetSignaturesForAppUC getSignaturesForApp;
     private ValidSignatureUC validSignature;
     private RegisterPaymentUC registerPayment;
+    private GetSignatureTypes getSignatureTypes;
 
     public Controller(GetAllClientsUC getAllClients, CreateSignatureUC createSignature, UpdateCostUC updateCost,
             GetSignaturesForClientUC getSignaturesForClient, GetAllApplicativesUC getAllApplicatives,
-            GetSignaturesForAppUC getSignaturesForApp, ValidSignatureUC validSignature, RegisterPaymentUC registerPayment) {
+            GetSignaturesForAppUC getSignaturesForApp, ValidSignatureUC validSignature, GetSignatureTypes getSignatureTypes, RegisterPaymentUC registerPayment) {
         this.getAllClients = getAllClients;
         this.createSignature = createSignature;
         this.updateCost = updateCost;
@@ -46,6 +48,7 @@ public class Controller {
         this.getAllApplicatives = getAllApplicatives;
         this.getSignaturesForApp = getSignaturesForApp;
         this.validSignature = validSignature;
+        this.getSignatureTypes = getSignatureTypes;
         this.registerPayment = registerPayment;
     }
 
@@ -79,12 +82,12 @@ public class Controller {
         return updateCost.run(cost.getNewCost(), applicativeId);
     }
 
-    // @GetMapping("/servcad/assinaturas/{tipo}")
-    // @CrossOrigin(origins = "*")
-    // public List<SignatureDTO> getSubscriptionsForTypes(@PathVariable String
-    // type){
-    // //TODO
-    // }
+    @GetMapping("/servcad/assinaturas/{type}")
+    @CrossOrigin(origins = "*")
+    public List<SignatureDTO> getSubscriptionsForTypes(@PathVariable String
+    type){
+        return getSignatureTypes.run(type);
+    }
 
     @GetMapping("/servcad/asscli/{clientId}")
     @CrossOrigin(origins = "*")

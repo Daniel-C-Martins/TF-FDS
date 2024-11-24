@@ -3,6 +3,7 @@ package tf.fds.app.application.responseDTO;
 import java.time.LocalDate;
 
 import tf.fds.app.domain.entities.PaymentModel;
+import tf.fds.app.infra.Enums.PaymentStatus.PaymentStatuses;
 
 public class PaymentDTO {
     private long code;
@@ -10,8 +11,8 @@ public class PaymentDTO {
     private LocalDate paymentDate;
     private String sale;
     private SignatureDTO signature;
-    private PaymentModel.PaymentStatus status;
-    private double returnedValue;
+    private double ReturnedValue;
+    private PaymentStatuses status;
 
     public PaymentDTO(PaymentModel paymentModel) {
         this.code = paymentModel.getCode();
@@ -20,7 +21,7 @@ public class PaymentDTO {
         this.sale = paymentModel.getSale();
         this.signature = new SignatureDTO(paymentModel.getSignature());
         this.status = paymentModel.getStatus();
-        this.returnedValue = 0.0;
+        this.ReturnedValue = 0.0;
     }
 
     public long getCode() {
@@ -39,7 +40,7 @@ public class PaymentDTO {
         return sale;
     }
 
-    public PaymentModel.PaymentStatus getStatus() {
+    public PaymentStatuses getStatus() {
         return status;
     }
 
@@ -48,16 +49,17 @@ public class PaymentDTO {
     }
 
     public double getReturnedValue() {
-        return returnedValue;
+        return ReturnedValue;
     }
 
     public void setReturnedValue(double returnedValue) {
-        this.returnedValue = returnedValue;
+        ReturnedValue = returnedValue;
     }
 
     @Override
     public String toString() {
-        return "PaymentDTO: code = " + code + ", payedValue = " + payedValue + ", paymentDate = " + paymentDate + ", sale = "
-                + sale + ", signature = " + signature;
+        return "PaymentDTO: code = " + code + ", payedValue = " + payedValue + ", paymentDate = " + paymentDate
+                + ", sale = "
+                + sale + ", signature = " + signature + ", status = " + status;
     }
 }

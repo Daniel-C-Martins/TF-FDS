@@ -2,19 +2,16 @@ package tf.fds.app.domain.entities;
 
 import java.time.LocalDate;
 
+import tf.fds.app.infra.Enums.PaymentStatus.PaymentStatuses;
+
 public class PaymentModel {
-    public enum PaymentStatus {
-        OK,
-        INCORRECT_VALUE
-    }
 
     private long code;
     private double payedValue;
     private LocalDate paymentDate;
     private String sale;
     private SignatureModel signature;
-    private PaymentStatus status;
-
+    private PaymentStatuses status;
 
     public PaymentModel() {
     }
@@ -39,7 +36,7 @@ public class PaymentModel {
         return signature;
     }
 
-    public PaymentStatus getStatus() {
+    public PaymentStatuses getStatus() {
         return status;
     }
 
@@ -63,7 +60,7 @@ public class PaymentModel {
         this.signature = signature;
     }
 
-    public void setStatus(PaymentStatus status) {
+    public void setStatus(PaymentStatuses status) {
         this.status = status;
     }
 }

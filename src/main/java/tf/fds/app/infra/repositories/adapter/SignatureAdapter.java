@@ -19,6 +19,7 @@ public class SignatureAdapter {
         sign.setEndDate(sModel.getEndDate());
         sign.setClient(ClientAdapter.fromClientModel(sModel.getClient()));
         sign.setApplicative(ApplicativeAdapter.fromApplicativeModel(sModel.getApplicative()));
+        sign.setType(sModel.getType());
         return sign;
     }
 
@@ -36,6 +37,7 @@ public class SignatureAdapter {
         sModel.setEndDate(sign.getEndDate());
         sModel.setClient(ClientAdapter.toClientModel(sign.getClient()));
         sModel.setApplicative(ApplicativeAdapter.toApplicativeModel(sign.getApplicative()));
+        sModel.setType(sign.getType());
         return sModel;
     }
 }

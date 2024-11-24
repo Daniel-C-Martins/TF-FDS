@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import tf.fds.app.infra.Enums.PaymentStatus.PaymentStatuses;
 
 @Entity
 @Table(name = "payment")
@@ -28,6 +29,9 @@ public class Payment {
 
     @Column(name = "sale", nullable = true)
     private String sale;
+
+    @Column(name = "status", nullable = false)
+    private PaymentStatuses status;
 
     @ManyToOne
     @JoinColumn(name = "signature_id")
@@ -55,6 +59,10 @@ public class Payment {
         return signature;
     }
 
+    public PaymentStatuses getStatus() {
+        return status;
+    }
+
     public void setCode(long code) {
         this.code = code;
     }
@@ -73,5 +81,9 @@ public class Payment {
 
     public void setSignature(Signature signature) {
         this.signature = signature;
+    }
+
+    public void setStatus(PaymentStatuses status) {
+        this.status = status;
     }
 }
