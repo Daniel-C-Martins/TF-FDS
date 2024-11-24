@@ -15,6 +15,7 @@ import tf.fds.app.application.responseDTO.ApplicativeDTO;
 import tf.fds.app.application.responseDTO.ClientDTO;
 import tf.fds.app.application.responseDTO.SignatureDTO;
 import tf.fds.app.application.useCases.CreateSignatureUC;
+import tf.fds.app.application.useCases.GetAllApplicativesUC;
 import tf.fds.app.application.useCases.GetAllClientsUC;
 import tf.fds.app.application.useCases.UpdateCostUC;
 
@@ -23,11 +24,13 @@ public class Controller {
     private GetAllClientsUC getAllClients;
     private CreateSignatureUC createSignature;
     private UpdateCostUC updateCost;
+    private GetAllApplicativesUC getAllApplicatives;
 
-    public Controller (GetAllClientsUC getAllClients, CreateSignatureUC createSignature, UpdateCostUC updateCost){
+    public Controller (GetAllClientsUC getAllClients, CreateSignatureUC createSignature, UpdateCostUC updateCost, GetAllApplicativesUC getAllApplicatives){
         this.getAllClients = getAllClients;
         this.createSignature = createSignature;
         this.updateCost = updateCost;
+        this.getAllApplicatives = getAllApplicatives;
     }
 
     @GetMapping("")
@@ -42,11 +45,11 @@ public class Controller {
         return getAllClients.run();
     }  
 
-    // @GetMapping("/servcad/aplicativos")
-    // @CrossOrigin(origins = "*")
-    // public List<ApplicativeDTO> getAllApplicatives(){
-    //     //TODO
-    // }
+    @GetMapping("/servcad/aplicativos")
+    @CrossOrigin(origins = "*")
+    public List<ApplicativeDTO> getAllApplicatives(){
+        return getAllApplicatives.run();
+    }
 
     @PostMapping("/servcad/assinaturas")
     @CrossOrigin(origins = "*")

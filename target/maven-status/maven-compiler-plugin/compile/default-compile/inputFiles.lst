@@ -1,4 +1,5 @@
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/AppApplication.java
+/mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/application/requestDTO/RequestCostDTO.java
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/application/requestDTO/RequestSignDTO.java
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/application/responseDTO/ApplicativeDTO.java
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/application/responseDTO/ClientDTO.java
@@ -6,6 +7,7 @@
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/application/responseDTO/SignatureDTO.java
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/application/responseDTO/UserDTO.java
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/application/useCases/CreateSignatureUC.java
+/mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/application/useCases/GetAllApplicativesUC.java
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/application/useCases/GetAllClientsUC.java
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/application/useCases/UpdateCostUC.java
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/domain/entities/ApplicativeModel.java
