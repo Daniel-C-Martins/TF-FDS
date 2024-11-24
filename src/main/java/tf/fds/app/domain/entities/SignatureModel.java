@@ -2,7 +2,7 @@ package tf.fds.app.domain.entities;
 
 import java.time.LocalDate;
 
-import tf.fds.app.infra.Enums.SignatureType.SignatureTypes;
+import tf.fds.app.domain.Enums.SignatureType.SignatureTypes;
 public class SignatureModel {
 
     private long code;

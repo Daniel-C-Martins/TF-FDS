@@ -4,11 +4,11 @@ import java.time.LocalDate;
 import org.springframework.stereotype.Component;
 
 import tf.fds.app.application.responseDTO.SignatureDTO;
+import tf.fds.app.domain.Enums.SignatureType.SignatureTypes;
 import tf.fds.app.domain.entities.SignatureModel;
 import tf.fds.app.domain.services.ApplicativeService;
 import tf.fds.app.domain.services.ClientService;
 import tf.fds.app.domain.services.SignatureService;
-import tf.fds.app.infra.Enums.SignatureType.SignatureTypes;
 
 /**
  * Caso de uso para criar uma nova assinatura.

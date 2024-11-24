@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import tf.fds.app.infra.Enums.SignatureType.SignatureTypes;
+import tf.fds.app.domain.Enums.SignatureType.SignatureTypes;
 
 @Entity
 @Table(name = "signature")

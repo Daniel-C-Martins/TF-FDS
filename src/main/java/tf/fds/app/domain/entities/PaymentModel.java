@@ -2,7 +2,7 @@ package tf.fds.app.domain.entities;
 
 import java.time.LocalDate;
 
-import tf.fds.app.infra.Enums.PaymentStatus.PaymentStatuses;
+import tf.fds.app.domain.Enums.PaymentStatus.PaymentStatuses;
 
 public class PaymentModel {
 

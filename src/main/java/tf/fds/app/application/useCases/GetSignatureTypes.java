@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import tf.fds.app.application.responseDTO.SignatureDTO;
+import tf.fds.app.domain.Enums.SignatureType.SignatureTypes;
 import tf.fds.app.domain.services.SignatureService;
-import tf.fds.app.infra.Enums.SignatureType.SignatureTypes;
 
 @Component
 public class GetSignatureTypes {

@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import tf.fds.app.infra.Enums.PaymentStatus.PaymentStatuses;
+import tf.fds.app.domain.Enums.PaymentStatus.PaymentStatuses;
 
 @Entity
 @Table(name = "payment")

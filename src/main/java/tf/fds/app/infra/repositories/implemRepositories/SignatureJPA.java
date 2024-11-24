@@ -5,9 +5,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import tf.fds.app.domain.Enums.SignatureType.SignatureTypes;
 import tf.fds.app.domain.entities.SignatureModel;
 import tf.fds.app.domain.repositories.ISignatureRepository;
-import tf.fds.app.infra.Enums.SignatureType.SignatureTypes;
 import tf.fds.app.infra.repositories.InterfJPA.Signature_ItfRep;
 import tf.fds.app.infra.repositories.adapter.SignatureAdapter;
 import tf.fds.app.infra.repositories.entities.Signature;

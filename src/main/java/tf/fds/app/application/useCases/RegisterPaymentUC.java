@@ -3,10 +3,10 @@ package tf.fds.app.application.useCases;
 import java.time.LocalDate;
 
 import tf.fds.app.application.responseDTO.PaymentDTO;
+import tf.fds.app.domain.Enums.PaymentStatus.PaymentStatuses;
 import tf.fds.app.domain.entities.PaymentModel;
 import tf.fds.app.domain.services.PaymentService;
 import tf.fds.app.domain.services.SignatureService;
-import tf.fds.app.infra.Enums.PaymentStatus.PaymentStatuses;
 
 /**
  * Caso de uso para registrar umpayment.

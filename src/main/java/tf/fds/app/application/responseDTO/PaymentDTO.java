@@ -2,8 +2,8 @@ package tf.fds.app.application.responseDTO;
 
 import java.time.LocalDate;
 
+import tf.fds.app.domain.Enums.PaymentStatus.PaymentStatuses;
 import tf.fds.app.domain.entities.PaymentModel;
-import tf.fds.app.infra.Enums.PaymentStatus.PaymentStatuses;
 
 /*
  * DTO utilizado para enviar os dados de um pagamento

@@ -1,8 +1,9 @@
 package tf.fds.app.application.responseDTO;
 
 import java.time.LocalDate;
+
+import tf.fds.app.domain.Enums.SignatureType.SignatureTypes;
 import tf.fds.app.domain.entities.SignatureModel;
-import tf.fds.app.infra.Enums.SignatureType.SignatureTypes;
 
 /*
  * DTO utilizado para enviar os dados de uma assinatura
