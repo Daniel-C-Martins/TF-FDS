@@ -92,4 +92,10 @@ public class SignatureJPA implements ISignatureRepository {
     public SignatureModel getSignatureById(long codass) {
         return SignatureAdapter.toSignatureModel(signatureRep.findById(codass).orElse(null));
     }
+
+    @Override
+    public void updateSignatureStatus() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'updateSignatureStatus'");
+    }
 }
