@@ -2,6 +2,12 @@ package tf.fds.app.application.responseDTO;
 
 import tf.fds.app.domain.entities.ClientModel;
 
+/*
+ * DTO utilizado para enviar os dados de um cliente
+ * @param code
+ * @param name
+ * @param email
+ */
 public class ClientDTO {
     private long code;
     private String name;

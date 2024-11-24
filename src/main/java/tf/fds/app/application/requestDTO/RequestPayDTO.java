@@ -1,5 +1,13 @@
 package tf.fds.app.application.requestDTO;
 
+/*
+ * DTO utilizado para receber o pagamento de um cliente como request body
+ * @param day
+ * @param month
+ * @param year
+ * @param signatureCode
+ * @param value
+ */
 public class RequestPayDTO {
    private int day;
    private int month;

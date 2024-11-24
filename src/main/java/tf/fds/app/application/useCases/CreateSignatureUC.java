@@ -44,6 +44,8 @@ public class CreateSignatureUC {
     * @throws IllegalArgumentException se o cliente ou aplicativo não for encontrado
     */
    public SignatureDTO run(long clienteId, long applicativeId) {
+
+      // Verifica se o cliente e o aplicativo existem
       if (clientService.getClientById(clienteId) == null) {
          throw new IllegalArgumentException("Cliente não encontrado");
       }
@@ -52,11 +54,16 @@ public class CreateSignatureUC {
          throw new IllegalArgumentException("Aplicativo não encontrado");
       }
 
+      // Cria uma nova assinatura com os detalhes fornecidos
       SignatureModel signModel = new SignatureModel();
       signModel.setClient(clientService.getClientById(clienteId));
       signModel.setApplicative(applicativeService.getApplicativeById(applicativeId));
       signModel.setBeginningDate(LocalDate.now());
+
+      // Define a data de término da assinatura como 30 dias a partir da data de início
       signModel.setEndDate(LocalDate.now().plusDays(30));
+
+      // Define o tipo da assinatura como ativa
       signModel.setType(SignatureTypes.ACTIVE);
 
       return new SignatureDTO(signatureService.createSignature(signModel));

@@ -5,6 +5,15 @@ import java.time.LocalDate;
 import tf.fds.app.domain.entities.PaymentModel;
 import tf.fds.app.infra.Enums.PaymentStatus.PaymentStatuses;
 
+/*
+ * DTO utilizado para enviar os dados de um pagamento
+ * @param code
+ * @param payedValue
+ * @param paymentDate
+ * @param sale
+ * @param signature
+ * @param status
+ */
 public class PaymentDTO {
     private long code;
     private double payedValue;

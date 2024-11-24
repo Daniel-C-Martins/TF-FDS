@@ -1,5 +1,10 @@
 package tf.fds.app.application.requestDTO;
 
+/*
+ * DTO utilizado para receber a assinatura de um cliente como request body
+ * @param clientCode
+ * @param applicativeCode
+ */
 public class RequestSignDTO {
    private long clientCode;
    private long applicativeCode;

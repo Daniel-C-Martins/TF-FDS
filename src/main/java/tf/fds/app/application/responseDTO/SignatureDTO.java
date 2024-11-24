@@ -4,6 +4,15 @@ import java.time.LocalDate;
 import tf.fds.app.domain.entities.SignatureModel;
 import tf.fds.app.infra.Enums.SignatureType.SignatureTypes;
 
+/*
+ * DTO utilizado para enviar os dados de uma assinatura
+ * @param code
+ * @param beginningDate
+ * @param endDate
+ * @param client
+ * @param applicative
+ * @param type
+ */
 public class SignatureDTO {
     private long code;
     private LocalDate beginningDate;

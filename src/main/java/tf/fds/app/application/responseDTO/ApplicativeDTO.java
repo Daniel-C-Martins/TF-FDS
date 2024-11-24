@@ -2,6 +2,12 @@ package tf.fds.app.application.responseDTO;
 
 import tf.fds.app.domain.entities.ApplicativeModel;
 
+/*
+ * DTO utilizado para enviar os dados de um aplicativo
+ * @param code
+ * @param name
+ * @param monthlyCost
+ */
 public class ApplicativeDTO {
     private long code;
     private String name;
