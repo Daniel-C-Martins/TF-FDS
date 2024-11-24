@@ -6,6 +6,7 @@ import tf.fds.app.application.responseDTO.PaymentDTO;
 import tf.fds.app.domain.entities.PaymentModel;
 import tf.fds.app.domain.services.PaymentService;
 import tf.fds.app.domain.services.SignatureService;
+import tf.fds.app.infra.Enums.PaymentStatus.PaymentStatuses;
 
 /**
  * Caso de uso para registrar umpayment.
@@ -54,16 +55,16 @@ public class RegisterPaymentUC {
       payment.setPayedValue(value);
 
       if (payment.getPayedValue() < payment.getSignature().getApplicative().getMonthlyCost()) {
-         payment.setStatus(PaymentModel.PaymentStatus.INCORRECT_VALUE);
+         payment.setStatus(PaymentStatuses.INCORRECT_VALUE);
 
          PaymentDTO payDTO = new PaymentDTO(payment);
          payDTO.setReturnedValue(payment.getPayedValue());
          return payDTO;
       } else {
-         payment.setStatus(PaymentModel.PaymentStatus.OK);
-         PaymentDTO payDTO = new PaymentDTO(payment);
+         payment.setStatus(PaymentStatuses.OK);
+         PaymentDTO payDTO = new PaymentDTO(paymentService.registerPayment(payment));
          payDTO.setReturnedValue(payment.getPayedValue() - payment.getSignature().getApplicative().getMonthlyCost());
-         return new PaymentDTO(paymentService.registerPayment(payment));
+         return payDTO;
       }
    }
 }
