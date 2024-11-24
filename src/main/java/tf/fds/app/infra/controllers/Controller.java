@@ -10,15 +10,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import tf.fds.app.application.requestDTO.RequestCostDTO;
+import tf.fds.app.application.requestDTO.RequestPayDTO;
 import tf.fds.app.application.requestDTO.RequestSignDTO;
 import tf.fds.app.application.responseDTO.ApplicativeDTO;
 import tf.fds.app.application.responseDTO.ClientDTO;
+import tf.fds.app.application.responseDTO.PaymentDTO;
 import tf.fds.app.application.responseDTO.SignatureDTO;
 import tf.fds.app.application.useCases.CreateSignatureUC;
 import tf.fds.app.application.useCases.GetAllApplicativesUC;
 import tf.fds.app.application.useCases.GetAllClientsUC;
 import tf.fds.app.application.useCases.GetSignaturesForAppUC;
 import tf.fds.app.application.useCases.GetSignaturesForClientUC;
+import tf.fds.app.application.useCases.RegisterPaymentUC;
 import tf.fds.app.application.useCases.UpdateCostUC;
 import tf.fds.app.application.useCases.ValidSignatureUC;
 
@@ -31,10 +34,11 @@ public class Controller {
     private GetAllApplicativesUC getAllApplicatives;
     private GetSignaturesForAppUC getSignaturesForApp;
     private ValidSignatureUC validSignature;
+    private RegisterPaymentUC registerPayment;
 
     public Controller(GetAllClientsUC getAllClients, CreateSignatureUC createSignature, UpdateCostUC updateCost,
             GetSignaturesForClientUC getSignaturesForClient, GetAllApplicativesUC getAllApplicatives,
-            GetSignaturesForAppUC getSignaturesForApp, ValidSignatureUC validSignature) {
+            GetSignaturesForAppUC getSignaturesForApp, ValidSignatureUC validSignature, RegisterPaymentUC registerPayment) {
         this.getAllClients = getAllClients;
         this.createSignature = createSignature;
         this.updateCost = updateCost;
@@ -42,6 +46,7 @@ public class Controller {
         this.getAllApplicatives = getAllApplicatives;
         this.getSignaturesForApp = getSignaturesForApp;
         this.validSignature = validSignature;
+        this.registerPayment = registerPayment;
     }
 
     @GetMapping("")
@@ -93,14 +98,11 @@ public class Controller {
         return getSignaturesForApp.run(applicativeId);
     }
 
-    // @PostMapping("/registrarpagamento")
-    // @CrossOrigin(origins = "*")
-    // public void registerPayment(@RequestBody int day, int month, int year, long
-    // signatureCode, double value){
-    // //TODO
-    // // Retorna status, data, valor estornado
-    // // Status sendo PAGAMENTO_OK, VALOR_INCORRETO
-    // }
+    @PostMapping("/registrarpagamento")
+    @CrossOrigin(origins = "*")
+    public PaymentDTO registerPayment(@RequestBody RequestPayDTO payment) {
+        return registerPayment.run(payment.getDay(), payment.getMonth(), payment.getYear(), payment.getSignatureCode(), payment.getValue());
+    }
 
     @GetMapping("/assinvalida/{signatureCode}")
     @CrossOrigin(origins = "*")

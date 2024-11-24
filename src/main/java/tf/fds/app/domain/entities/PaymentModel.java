@@ -13,6 +13,8 @@ public class PaymentModel {
     private LocalDate paymentDate;
     private String sale;
     private SignatureModel signature;
+    private PaymentStatus status;
+
 
     public PaymentModel() {
     }
@@ -37,6 +39,10 @@ public class PaymentModel {
         return signature;
     }
 
+    public PaymentStatus getStatus() {
+        return status;
+    }
+
     public void setCode(long code) {
         this.code = code;
     }
@@ -55,5 +61,9 @@ public class PaymentModel {
 
     public void setSignature(SignatureModel signature) {
         this.signature = signature;
+    }
+
+    public void setStatus(PaymentStatus status) {
+        this.status = status;
     }
 }

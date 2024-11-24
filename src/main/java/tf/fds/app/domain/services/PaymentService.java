@@ -15,7 +15,7 @@ public class PaymentService {
       this.paymentRep = paymentRep;
    }
 
-   PaymentModel registerPayment(PaymentModel payment) {
+   public PaymentModel registerPayment(PaymentModel payment) {
       return paymentRep.registerPayment(payment);
    }
 }
