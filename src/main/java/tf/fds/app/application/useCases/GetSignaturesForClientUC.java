@@ -22,6 +22,8 @@ public class GetSignaturesForClientUC {
       if (clientService.getClientById(clientId) == null) {
          throw new IllegalArgumentException("Cliente não encontrado");
       }
+
+      signatureService.updateSignatureStatus();
       return signatureService.getSignaturesByClient(clientId).stream().map(signature -> new SignatureDTO(signature))
             .toList();
    }

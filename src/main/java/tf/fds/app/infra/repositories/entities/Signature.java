@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import tf.fds.app.infra.Enums.SignatureType.SignatureTypes;
 
 @Entity
 @Table(name = "signature")
@@ -25,6 +26,9 @@ public class Signature {
 
     @Column(name = "end_date", nullable = false)
     private LocalDate endDate;
+
+    @Column(name = "type", nullable = true)
+    private SignatureTypes type;
 
     @ManyToOne
     @JoinColumn(name = "client_id")
@@ -56,6 +60,10 @@ public class Signature {
         return applicative;
     }
 
+    public SignatureTypes getType() {
+        return type;
+    }
+
     public void setCode(Long code) {
         this.code = code;
     }
@@ -74,5 +82,9 @@ public class Signature {
 
     public void setApplicative(Applicative applicative) {
         this.applicative = applicative;
+    }
+
+    public void setType(SignatureTypes type) {
+        this.type = type;
     }
 }

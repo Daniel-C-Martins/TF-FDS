@@ -77,7 +77,7 @@ public class Controller {
         return updateCost.run(cost.getNewCost(), applicativeId);
     }
 
-    @GetMapping("/servcad/assinaturas/{tipo}")
+    @GetMapping("/servcad/assinaturas/{type}")
     @CrossOrigin(origins = "*")
     public List<SignatureDTO> getSubscriptionsForTypes(@PathVariable String
     type){

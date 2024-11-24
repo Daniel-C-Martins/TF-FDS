@@ -1,12 +1,14 @@
 package tf.fds.app.application.useCases;
 
-import java.time.LocalDate;
 import java.util.List;
 
-import tf.fds.app.application.responseDTO.SignatureDTO;
-import tf.fds.app.domain.entities.SignatureModel;
-import tf.fds.app.domain.services.SignatureService;
+import org.springframework.stereotype.Component;
 
+import tf.fds.app.application.responseDTO.SignatureDTO;
+import tf.fds.app.domain.services.SignatureService;
+import tf.fds.app.infra.Enums.SignatureType.SignatureTypes;
+
+@Component
 public class GetSignatureTypes {
    private SignatureService signatureService;
 
@@ -16,25 +18,20 @@ public class GetSignatureTypes {
 
    public List<SignatureDTO> run(String type) {
 
-      signatureService.getAllSignatures().stream()
-            .filter(s -> s.getEndDate().isAfter(LocalDate.now()))
-            .forEach(s -> s.setType(SignatureModel.SignatureTypes.ACTIVE));
-
-      signatureService.getAllSignatures().stream().filter(s -> s.getEndDate().isBefore(LocalDate.now()))
-            .forEach(s -> s.setType(SignatureModel.SignatureTypes.CANCELED));
+      signatureService.updateSignatureStatus();
 
       if (type.equals("ALL"))
          return signatureService.getAllSignatures().stream().map(signature -> new SignatureDTO(signature)).toList();
 
       if (type.equals("ACTIVE")) {
          return signatureService.getAllSignatures().stream()
-               .filter(s -> s.getType() == SignatureModel.SignatureTypes.ACTIVE)
+               .filter(s -> s.getType() == SignatureTypes.ACTIVE)
                .map(signature -> new SignatureDTO(signature)).toList();
       }
 
       if (type.equals("CANCELED")) {
          return signatureService.getAllSignatures().stream()
-               .filter(s -> s.getType() == SignatureModel.SignatureTypes.CANCELED)
+               .filter(s -> s.getType() == SignatureTypes.CANCELED)
                .map(signature -> new SignatureDTO(signature)).toList();
       }
 

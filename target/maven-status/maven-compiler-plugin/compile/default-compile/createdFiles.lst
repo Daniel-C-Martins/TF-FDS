@@ -6,7 +6,6 @@ tf/fds/app/application/useCases/GetAllClientsUC.class
 tf/fds/app/domain/repositories/IApplicativeRepository.class
 tf/fds/app/infra/repositories/InterfJPA/User_ItfRep.class
 tf/fds/app/infra/repositories/InterfJPA/Payment_ItfRep.class
-tf/fds/app/domain/entities/SignatureModel$SignatureTypes.class
 tf/fds/app/infra/repositories/adapter/ApplicativeAdapter.class
 tf/fds/app/infra/repositories/adapter/SignatureAdapter.class
 tf/fds/app/infra/repositories/implemRepositories/SignatureJPA.class
@@ -16,7 +15,6 @@ tf/fds/app/domain/entities/ApplicativeModel.class
 tf/fds/app/AppApplication.class
 tf/fds/app/domain/repositories/ISignatureRepository.class
 tf/fds/app/infra/repositories/adapter/PaymentAdapter.class
-tf/fds/app/domain/entities/PaymentModel$PaymentStatus.class
 tf/fds/app/infra/controllers/Controller.class
 tf/fds/app/domain/entities/ClientModel.class
 tf/fds/app/infra/repositories/entities/Payment.class

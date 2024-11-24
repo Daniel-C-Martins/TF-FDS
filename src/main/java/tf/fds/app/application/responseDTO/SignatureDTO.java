@@ -2,6 +2,7 @@ package tf.fds.app.application.responseDTO;
 
 import java.time.LocalDate;
 import tf.fds.app.domain.entities.SignatureModel;
+import tf.fds.app.infra.Enums.SignatureType.SignatureTypes;
 
 public class SignatureDTO {
     private long code;
@@ -9,6 +10,7 @@ public class SignatureDTO {
     private LocalDate endDate;
     private ClientDTO client;
     private ApplicativeDTO applicative;
+    private SignatureTypes type;
 
     public SignatureDTO(SignatureModel signatureModel) {
         this.code = signatureModel.getCode();
@@ -16,6 +18,7 @@ public class SignatureDTO {
         this.endDate = signatureModel.getEndDate();
         this.client = new ClientDTO(signatureModel.getClient());
         this.applicative = new ApplicativeDTO(signatureModel.getApplicative());
+        this.type = signatureModel.getType();
     }
 
     public long getCode() {
@@ -41,6 +44,6 @@ public class SignatureDTO {
     @Override
     public String toString() {
         return "SignatureDTO: code = " + code + ", beginningDate = " + beginningDate + ", endDate = " + endDate + ", client = "
-                + client + ", applicative = " + applicative;
+                + client + ", applicative = " + applicative + ", type = " + type;
     }
 }

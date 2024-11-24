@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import tf.fds.app.domain.entities.SignatureModel;
 import tf.fds.app.domain.repositories.ISignatureRepository;
+import tf.fds.app.infra.Enums.SignatureType.SignatureTypes;
 import tf.fds.app.infra.repositories.InterfJPA.Signature_ItfRep;
 import tf.fds.app.infra.repositories.adapter.SignatureAdapter;
 import tf.fds.app.infra.repositories.entities.Signature;
@@ -93,9 +94,15 @@ public class SignatureJPA implements ISignatureRepository {
         return SignatureAdapter.toSignatureModel(signatureRep.findById(codass).orElse(null));
     }
 
+    /*
+     * Atualiza o status das assinaturas
+     * Atualiza o status das assinaturas para ativo ou cancelado
+     */
     @Override
     public void updateSignatureStatus() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updateSignatureStatus'");
+        List<Signature> sign = signatureRep.findAll();
+        sign.stream().filter(s -> s.getEndDate().isAfter(LocalDate.now())).forEach(s -> s.setType(SignatureTypes.ACTIVE));
+        sign.stream().filter(s -> s.getEndDate().isBefore(LocalDate.now())).forEach(s -> s.setType(SignatureTypes.CANCELED));
+        signatureRep.saveAll(sign);
     }
 }
