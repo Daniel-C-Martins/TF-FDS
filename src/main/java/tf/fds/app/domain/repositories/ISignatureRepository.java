@@ -4,6 +4,9 @@ import java.util.List;
 
 import tf.fds.app.domain.entities.SignatureModel;
 
+/**
+ * Interface que representa o repositório de assinaturas.
+ */
 public interface ISignatureRepository {
     SignatureModel createSignature(SignatureModel signature);
 

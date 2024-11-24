@@ -1,5 +1,8 @@
 package tf.fds.app.domain.entities;
 
+/**
+ * Entidade que representa um cliente.
+ */
 public class ClientModel {
     private long code;
     private String name;

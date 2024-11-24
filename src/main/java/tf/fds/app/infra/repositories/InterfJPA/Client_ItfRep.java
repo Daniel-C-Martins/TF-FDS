@@ -6,7 +6,11 @@ import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 import tf.fds.app.infra.repositories.entities.Client;
 
-public interface Client_ItfRep extends CrudRepository<Client,Long>{
+/**
+ * Interface de repositório de clientes que herda de CrudRepository do JPA.
+ */
+public interface Client_ItfRep extends CrudRepository<Client, Long> {
     List<Client> findAll();
+
     Optional<Client> findByCode(long code);
 }

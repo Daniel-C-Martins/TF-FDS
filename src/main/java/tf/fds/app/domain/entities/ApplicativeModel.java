@@ -1,5 +1,8 @@
 package tf.fds.app.domain.entities;
 
+/**
+ * Entidade que representa um aplicativo.
+ */
 public class ApplicativeModel {
     private long code;
     private String name;

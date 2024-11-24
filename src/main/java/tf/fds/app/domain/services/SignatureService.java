@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 import tf.fds.app.domain.entities.SignatureModel;
 import tf.fds.app.domain.repositories.ISignatureRepository;
 
+/**
+ * Classe de serviço para assinaturas.
+ */
 @Service
 public class SignatureService {
    private ISignatureRepository signatureRep;
@@ -17,31 +20,31 @@ public class SignatureService {
       this.signatureRep = signatureRep;
    }
 
-   public SignatureModel createSignature(SignatureModel signature){
+   public SignatureModel createSignature(SignatureModel signature) {
       return signatureRep.createSignature(signature);
    }
 
-   public boolean isActive(long codass){
+   public boolean isActive(long codass) {
       return signatureRep.isActive(codass);
    }
 
-   public List<SignatureModel> getAllSignatures(){
+   public List<SignatureModel> getAllSignatures() {
       return signatureRep.getAllSignatures();
    }
 
-   public List<SignatureModel> getSignaturesByClient(long codcli){
+   public List<SignatureModel> getSignaturesByClient(long codcli) {
       return signatureRep.getSignaturesByClient(codcli);
    }
 
-   public List<SignatureModel> getSignaturesByApp(long codapp){
+   public List<SignatureModel> getSignaturesByApp(long codapp) {
       return signatureRep.getSignaturesByApp(codapp);
    }
 
-   public SignatureModel getSignatureById(long codass){
+   public SignatureModel getSignatureById(long codass) {
       return signatureRep.getSignatureById(codass);
    }
 
-   public void updateSignatureStatus(){
+   public void updateSignatureStatus() {
       signatureRep.updateSignatureStatus();
    }
 }

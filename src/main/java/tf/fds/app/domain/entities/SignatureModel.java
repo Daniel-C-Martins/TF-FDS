@@ -1,8 +1,11 @@
 package tf.fds.app.domain.entities;
 
 import java.time.LocalDate;
-
 import tf.fds.app.domain.Enums.SignatureType.SignatureTypes;
+
+/**
+ * Entidade que representa uma assinatura.
+ */
 public class SignatureModel {
 
     private long code;

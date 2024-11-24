@@ -12,7 +12,8 @@ import tf.fds.app.domain.services.SignatureService;
 
 /**
  * Caso de uso para criar uma nova assinatura.
- * Esta classe é responsável por lidar com a criação de uma nova assinatura, validando o cliente e o aplicativo,
+ * Esta classe é responsável por lidar com a criação de uma nova assinatura,
+ * validando o cliente e o aplicativo,
  * e então criando uma nova assinatura com os detalhes fornecidos.
  */
 @Component
@@ -25,11 +26,12 @@ public class CreateSignatureUC {
    /**
     * Constrói um novo CreateSignatureUC com os serviços especificados.
     *
-    * @param signatureService o serviço para lidar com operações de assinatura
-    * @param clientService o serviço para lidar com operações de cliente
+    * @param signatureService   o serviço para lidar com operações de assinatura
+    * @param clientService      o serviço para lidar com operações de cliente
     * @param applicativeService o serviço para lidar com operações de aplicativo
     */
-   public CreateSignatureUC(SignatureService signatureService, ClientService clientService, ApplicativeService applicativeService) {
+   public CreateSignatureUC(SignatureService signatureService, ClientService clientService,
+         ApplicativeService applicativeService) {
       this.signatureService = signatureService;
       this.clientService = clientService;
       this.applicativeService = applicativeService;
@@ -38,10 +40,11 @@ public class CreateSignatureUC {
    /**
     * Executa o caso de uso para criar uma nova assinatura.
     *
-    * @param clienteId o ID do cliente
+    * @param clienteId     o ID do cliente
     * @param applicativeId o ID do aplicativo
     * @return um SignatureDTO contendo os detalhes da assinatura criada
-    * @throws IllegalArgumentException se o cliente ou aplicativo não for encontrado
+    * @throws IllegalArgumentException se o cliente ou aplicativo não for
+    *                                  encontrado
     */
    public SignatureDTO run(long clienteId, long applicativeId) {
 
@@ -50,7 +53,7 @@ public class CreateSignatureUC {
          throw new IllegalArgumentException("Cliente não encontrado");
       }
 
-      if (applicativeService.getApplicativeById(applicativeId) == null){
+      if (applicativeService.getApplicativeById(applicativeId) == null) {
          throw new IllegalArgumentException("Aplicativo não encontrado");
       }
 

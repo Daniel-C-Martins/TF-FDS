@@ -1,6 +1,6 @@
 package tf.fds.app.application.requestDTO;
 
-/*
+/**
  * DTO utilizado para receber o pagamento de um cliente como request body
  * @param day
  * @param month
@@ -51,5 +51,11 @@ public class RequestPayDTO {
 
    public void setSale(String sale) {
       this.sale = sale;
+   }
+
+   @Override
+   public String toString() {
+      return "RequestPayDTO - Dia = " + day + ", Mês = " + month + ", Ano = " + year + ", Codígo da assinatura = " + signatureCode
+            + ", Valor = " + value + ", Promoção = " + sale;
    }
 }

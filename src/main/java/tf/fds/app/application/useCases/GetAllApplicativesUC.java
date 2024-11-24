@@ -1,7 +1,6 @@
 package tf.fds.app.application.useCases;
 
 import java.util.List;
-
 import org.springframework.stereotype.Component;
 
 import tf.fds.app.application.responseDTO.ApplicativeDTO;

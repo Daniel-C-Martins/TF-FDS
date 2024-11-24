@@ -60,6 +60,7 @@ public class RegisterPaymentUC {
          return payDTO;
       } else {
 
+         // Se o valor for suficiente, registra o pagamento e retorna o status OK
          payment.setStatus(PaymentStatuses.OK);
          PaymentDTO payDTO = new PaymentDTO(paymentService.registerPayment(payment));
          return payDTO;

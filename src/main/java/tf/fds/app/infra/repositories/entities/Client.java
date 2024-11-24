@@ -6,6 +6,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
+/**
+ * Entidade Client
+ * 
+ * Entidade do banco de dados que representa um cliente
+ */
 @Entity
 @Table(name = "client")
 public class Client {
@@ -21,7 +27,8 @@ public class Client {
     @Column(name = "email", nullable = false)
     private String email;
 
-    public Client() {}
+    public Client() {
+    }
 
     public Long getCode() {
         return code;

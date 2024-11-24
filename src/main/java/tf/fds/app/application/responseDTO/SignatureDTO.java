@@ -5,8 +5,9 @@ import java.time.LocalDate;
 import tf.fds.app.domain.Enums.SignatureType.SignatureTypes;
 import tf.fds.app.domain.entities.SignatureModel;
 
-/*
+/**
  * DTO utilizado para enviar os dados de uma assinatura
+ * 
  * @param code
  * @param beginningDate
  * @param endDate
@@ -53,7 +54,7 @@ public class SignatureDTO {
 
     @Override
     public String toString() {
-        return "SignatureDTO: code = " + code + ", beginningDate = " + beginningDate + ", endDate = " + endDate + ", client = "
-                + client + ", applicative = " + applicative + ", type = " + type;
+        return "SignatureDTO - Código = " + code + ", Data de início = " + beginningDate + ", Data de término = "
+                + endDate + ", Cliente = " + client + ", Aplicativo = " + applicative + ", Tipo = " + type;
     }
 }

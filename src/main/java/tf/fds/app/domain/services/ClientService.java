@@ -7,20 +7,23 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * Classe de serviço para clientes.
+ */
 @Service
 public class ClientService {
     private IClientRepository clientRep;
 
     @Autowired
-    public ClientService(IClientRepository clientRep){
+    public ClientService(IClientRepository clientRep) {
         this.clientRep = clientRep;
     }
 
-    public List<ClientModel> getAllClients(){
+    public List<ClientModel> getAllClients() {
         return clientRep.getAllClients();
     }
 
-    public ClientModel getClientById(long clientId){
+    public ClientModel getClientById(long clientId) {
         return clientRep.getClientById(clientId);
     }
 }

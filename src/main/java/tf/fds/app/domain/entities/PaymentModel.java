@@ -4,6 +4,9 @@ import java.time.LocalDate;
 
 import tf.fds.app.domain.Enums.PaymentStatus.PaymentStatuses;
 
+/**
+ * Entidade que representa um pagamento.
+ */
 public class PaymentModel {
 
     private long code;

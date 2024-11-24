@@ -12,6 +12,11 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import tf.fds.app.domain.Enums.SignatureType.SignatureTypes;
 
+/**
+ * Entidade Signature
+ * 
+ * Entidade do banco de dados
+ */
 @Entity
 @Table(name = "signature")
 public class Signature {
@@ -38,7 +43,8 @@ public class Signature {
     @JoinColumn(name = "applicative_id")
     private Applicative applicative;
 
-    public Signature() {}
+    public Signature() {
+    }
 
     public Long getCode() {
         return code;

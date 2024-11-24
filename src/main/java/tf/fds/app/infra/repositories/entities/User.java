@@ -7,6 +7,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+/**
+ * Entidade User
+ * 
+ * Entidade do banco de dados que representa um usuário
+ */
 @Entity
 @Table(name = "users")
 public class User {
@@ -21,7 +26,8 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
 
-    public User() {}
+    public User() {
+    }
 
     public long getCode() {
         return code;

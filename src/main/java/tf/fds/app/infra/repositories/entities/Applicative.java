@@ -7,6 +7,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+/**
+ * Entidade Applicative
+ * 
+ * Entidade do banco de dados que representa um aplicativo
+ */
 @Entity
 @Table(name = "applicative")
 public class Applicative {
@@ -21,7 +26,8 @@ public class Applicative {
     @Column(name = "monthly_cost", nullable = false)
     private double monthlyCost;
 
-    public Applicative() {}
+    public Applicative() {
+    }
 
     public Long getCode() {
         return code;

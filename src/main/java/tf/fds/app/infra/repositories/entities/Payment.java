@@ -12,6 +12,11 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import tf.fds.app.domain.Enums.PaymentStatus.PaymentStatuses;
 
+/**
+ * Entidade Payment
+ * 
+ * Entidade do banco de dados que representa um pagamento
+ */
 @Entity
 @Table(name = "payment")
 public class Payment {
@@ -40,7 +45,8 @@ public class Payment {
     @JoinColumn(name = "signature_id")
     private Signature signature;
 
-    public Payment() {}
+    public Payment() {
+    }
 
     public long getCode() {
         return code;

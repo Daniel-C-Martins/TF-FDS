@@ -20,11 +20,12 @@ public class SignatureJPA implements ISignatureRepository {
         this.signatureRep = signatureRep;
     }
 
-    /*
+    /**
      * Cria uma assinatura
+     * 
      * @param signature
      * @return SignatureModel
-     * Salva a assinatura no banco de dados
+     *         Salva a assinatura no banco de dados
      */
     @Override
     public SignatureModel createSignature(SignatureModel signature) {
@@ -32,11 +33,13 @@ public class SignatureJPA implements ISignatureRepository {
         return signature;
     }
 
-    /*
+    /**
      * Verifica se a assinatura está ativa
+     * 
      * @param codass
      * @return boolean
-     * Pesquisa a assinatura pelo código e verifica se a data de término é posterior a data atual
+     *         Pesquisa a assinatura pelo código e verifica se a data de término é
+     *         posterior a data atual
      */
     @Override
     public boolean isActive(long codass) {
@@ -49,21 +52,24 @@ public class SignatureJPA implements ISignatureRepository {
         }
     }
 
-    /*
+    /**
      * Retorna uma lista de todas as assinaturas
+     * 
      * @return List<SignatureModel>
-     * Pesquisa todas as assinaturas e mapeia para SignatureModel
+     *         Pesquisa todas as assinaturas e mapeia para SignatureModel
      */
     @Override
     public List<SignatureModel> getAllSignatures() {
         return signatureRep.findAll().stream().map(s -> SignatureAdapter.toSignatureModel(s)).toList();
     }
 
-    /*
+    /**
      * Retorna uma lista de assinaturas de um cliente
+     * 
      * @param codcli
      * @return List<SignatureModel>
-     * Pesquisa todas as assinaturas e filtra as que possuem o código do cliente igual a codcli
+     *         Pesquisa todas as assinaturas e filtra as que possuem o código do
+     *         cliente igual a codcli
      */
     @Override
     public List<SignatureModel> getSignaturesByClient(long codcli) {
@@ -71,38 +77,44 @@ public class SignatureJPA implements ISignatureRepository {
         return sign.stream().map(s -> SignatureAdapter.toSignatureModel(s)).toList();
     }
 
-    /*
+    /**
      * Retorna uma lista de assinaturas de um aplicativo
+     * 
      * @param codapp
      * @return List<SignatureModel>
-     * Pesquisa todas as assinaturas e filtra as que possuem o código do aplicativo igual a codapp
+     *         Pesquisa todas as assinaturas e filtra as que possuem o código do
+     *         aplicativo igual a codapp
      */
     @Override
     public List<SignatureModel> getSignaturesByApp(long codapp) {
-        List<Signature> sign = signatureRep.findAll().stream().filter(s -> s.getApplicative().getCode() == codapp).toList();
+        List<Signature> sign = signatureRep.findAll().stream().filter(s -> s.getApplicative().getCode() == codapp)
+                .toList();
         return sign.stream().map(s -> SignatureAdapter.toSignatureModel(s)).toList();
     }
 
-    /*
+    /**
      * Retorna uma assinatura pelo código
+     * 
      * @param codass
      * @return SignatureModel
-     * Pesquisa a assinatura pelo código e mapeia para SignatureModel
+     *         Pesquisa a assinatura pelo código e mapeia para SignatureModel
      */
     @Override
     public SignatureModel getSignatureById(long codass) {
         return SignatureAdapter.toSignatureModel(signatureRep.findById(codass).orElse(null));
     }
 
-    /*
+    /**
      * Atualiza o status das assinaturas
      * Atualiza o status das assinaturas para ativo ou cancelado
      */
     @Override
     public void updateSignatureStatus() {
         List<Signature> sign = signatureRep.findAll();
-        sign.stream().filter(s -> s.getEndDate().isAfter(LocalDate.now())).forEach(s -> s.setType(SignatureTypes.ACTIVE));
-        sign.stream().filter(s -> s.getEndDate().isBefore(LocalDate.now())).forEach(s -> s.setType(SignatureTypes.CANCELED));
+        sign.stream().filter(s -> s.getEndDate().isAfter(LocalDate.now()))
+                .forEach(s -> s.setType(SignatureTypes.ACTIVE));
+        sign.stream().filter(s -> s.getEndDate().isBefore(LocalDate.now()))
+                .forEach(s -> s.setType(SignatureTypes.CANCELED));
         signatureRep.saveAll(sign);
     }
 }

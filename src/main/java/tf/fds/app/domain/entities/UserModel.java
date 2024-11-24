@@ -1,5 +1,8 @@
 package tf.fds.app.domain.entities;
 
+/**
+ * Entidade que representa um usuário.
+ */
 public class UserModel {
     private long code;
     private String username;

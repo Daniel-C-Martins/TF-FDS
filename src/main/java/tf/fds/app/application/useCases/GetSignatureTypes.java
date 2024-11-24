@@ -49,7 +49,7 @@ public class GetSignatureTypes {
                .filter(s -> s.getType() == SignatureTypes.ACTIVE)
                .map(signature -> new SignatureDTO(signature)).toList();
       }
-      
+
       if (type.equals("CANCELED")) {
          // retorna todas as assinaturas canceladas
          return signatureService.getAllSignatures().stream()

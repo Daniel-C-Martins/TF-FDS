@@ -5,8 +5,9 @@ import java.time.LocalDate;
 import tf.fds.app.domain.Enums.PaymentStatus.PaymentStatuses;
 import tf.fds.app.domain.entities.PaymentModel;
 
-/*
+/**
  * DTO utilizado para enviar os dados de um pagamento
+ * 
  * @param code
  * @param payedValue
  * @param paymentDate
@@ -60,10 +61,11 @@ public class PaymentDTO {
     public double getReturnedValue() {
         return ReturnedValue;
     }
+
     @Override
     public String toString() {
-        return "PaymentDTO: code = " + code + ", payedValue = " + payedValue + ", paymentDate = " + paymentDate
-                + ", sale = "
-                + sale + ", signature = " + signature + ", status = " + status;
+        return "PaymentDTO - Código = " + code + ", Valor pago = " + payedValue + ", Data do pagamento = " + paymentDate
+                + ", Venda = " + sale + ", Assinatura = " + signature + ", Status = " + status + ", Valor devolvido = "
+                + ReturnedValue;
     }
 }

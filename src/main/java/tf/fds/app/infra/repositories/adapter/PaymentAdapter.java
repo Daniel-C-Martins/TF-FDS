@@ -5,14 +5,15 @@ import tf.fds.app.infra.repositories.entities.Payment;
 
 public class PaymentAdapter {
 
-    /*
+    /**
      * Conversor de PaymentModel para Payment
+     * 
      * @param pModel
      * @return Payment
-     * Cria um objeto Payment a partir de um objeto PaymentModel
-     * Mapea os objetos de PaymentModel para Payment
+     *         Cria um objeto Payment a partir de um objeto PaymentModel
+     *         Mapea os objetos de PaymentModel para Payment
      */
-    public static Payment fromPaymentModel(PaymentModel pModel){
+    public static Payment fromPaymentModel(PaymentModel pModel) {
         Payment pay = new Payment();
         pay.setCode(pModel.getCode());
         pay.setPayedValue(pModel.getPayedValue());
@@ -24,14 +25,15 @@ public class PaymentAdapter {
         return pay;
     }
 
-    /*
+    /**
      * Conversor de Payment para PaymentModel
+     * 
      * @param pay
      * @return PaymentModel
-     * Cria um objeto PaymentModel a partir de um objeto Payment
-     * Mapea os objetos de Payment para PaymentModel
+     *         Cria um objeto PaymentModel a partir de um objeto Payment
+     *         Mapea os objetos de Payment para PaymentModel
      */
-    public static PaymentModel toPaymentModel(Payment pay){
+    public static PaymentModel toPaymentModel(Payment pay) {
         PaymentModel pModel = new PaymentModel();
         pModel.setCode(pay.getCode());
         pModel.setPayedValue(pay.getPayedValue());
