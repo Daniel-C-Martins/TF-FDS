@@ -9,7 +9,8 @@
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/application/useCases/CreateSignatureUC.java
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/application/useCases/GetAllApplicativesUC.java
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/application/useCases/GetAllClientsUC.java
-/mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/application/useCases/GetSignaturesByClientUC.java
+/mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/application/useCases/GetSignaturesForAppUC.java
+/mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/application/useCases/GetSignaturesForClientUC.java
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/application/useCases/UpdateCostUC.java
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/domain/entities/ApplicativeModel.java
 /mnt/c/Users/Daniel/Desktop/TRABALHOS/TF-FDS/src/main/java/tf/fds/app/domain/entities/ClientModel.java
