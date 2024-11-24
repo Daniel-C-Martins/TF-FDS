@@ -30,7 +30,7 @@ public class PaymentDTO {
         this.sale = paymentModel.getSale();
         this.signature = new SignatureDTO(paymentModel.getSignature());
         this.status = paymentModel.getStatus();
-        this.ReturnedValue = 0.0;
+        this.ReturnedValue = paymentModel.getReturnedValue();
     }
 
     public long getCode() {
@@ -60,11 +60,6 @@ public class PaymentDTO {
     public double getReturnedValue() {
         return ReturnedValue;
     }
-
-    public void setReturnedValue(double returnedValue) {
-        ReturnedValue = returnedValue;
-    }
-
     @Override
     public String toString() {
         return "PaymentDTO: code = " + code + ", payedValue = " + payedValue + ", paymentDate = " + paymentDate

@@ -2,6 +2,8 @@ package tf.fds.app.application.useCases;
 
 import java.time.LocalDate;
 
+import org.springframework.stereotype.Component;
+
 import tf.fds.app.application.responseDTO.PaymentDTO;
 import tf.fds.app.domain.Enums.PaymentStatus.PaymentStatuses;
 import tf.fds.app.domain.entities.PaymentModel;
@@ -11,6 +13,7 @@ import tf.fds.app.domain.services.SignatureService;
 /**
  * Componente de caso de uso para registrar um pagamento.
  */
+@Component
 public class RegisterPaymentUC {
 
    private PaymentService paymentService;
@@ -23,6 +26,7 @@ public class RegisterPaymentUC {
     * @param paymentService   o serviço de pagamento a ser usado
     * @param signatureService o serviço de assinatura a ser usado
     */
+
    public RegisterPaymentUC(PaymentService paymentService, SignatureService signatureService) {
       this.paymentService = paymentService;
       this.signatureService = signatureService;
@@ -39,14 +43,12 @@ public class RegisterPaymentUC {
     * @return um PaymentDTO contendo os detalhes do pagamento registrado
     * @throws IllegalArgumentException se a assinatura não for encontrada
     */
-   public PaymentDTO run(int day, int month, int year, long signatureCode, double value) {
-
-      // Cria um novo pagamento com os detalhes fornecidos
+   public PaymentDTO run(int day, int month, int year, long signatureCode, double value, String sale) {
       PaymentModel payment = new PaymentModel();
       LocalDate data = LocalDate.of(year, month, day);
       payment.setPaymentDate(data);
       payment.setSignature(signatureService.getSignatureById(signatureCode));
-      payment.setSale("Venda");
+      payment.setSale(sale);
       payment.setPayedValue(value);
 
       // verifica se o valor do pagamento é suficiente
@@ -55,14 +57,11 @@ public class RegisterPaymentUC {
 
          // Se o valor for insuficiente, retorna o valor total
          PaymentDTO payDTO = new PaymentDTO(payment);
-         payDTO.setReturnedValue(payment.getPayedValue());
          return payDTO;
       } else {
+
          payment.setStatus(PaymentStatuses.OK);
          PaymentDTO payDTO = new PaymentDTO(paymentService.registerPayment(payment));
-         payDTO.setReturnedValue(payment.getPayedValue() - payment.getSignature().getApplicative().getMonthlyCost());
-         LocalDate endDate = signatureService.getSignatureById(signatureCode).getEndDate();
-         signatureService.getSignatureById(signatureCode).setEndDate(endDate.plusDays(30));
          return payDTO;
       }
    }

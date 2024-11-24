@@ -18,7 +18,9 @@ public class PaymentAdapter {
         pay.setPayedValue(pModel.getPayedValue());
         pay.setPaymentDate(pModel.getPaymentDate());
         pay.setSale(pModel.getSale());
+        pay.setStatus(pModel.getStatus());
         pay.setSignature(SignatureAdapter.fromSignatureModel(pModel.getSignature()));
+        pay.setReturnedValue(pModel.getReturnedValue());
         return pay;
     }
 
@@ -35,7 +37,9 @@ public class PaymentAdapter {
         pModel.setPayedValue(pay.getPayedValue());
         pModel.setPaymentDate(pay.getPaymentDate());
         pModel.setSale(pay.getSale());
+        pModel.setStatus(pay.getStatus());
         pModel.setSignature(SignatureAdapter.toSignatureModel(pay.getSignature()));
+        pModel.setReturnedValue(pay.getReturnedValue());
         return pModel;
     }
 }
