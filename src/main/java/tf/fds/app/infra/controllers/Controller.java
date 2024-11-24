@@ -17,6 +17,7 @@ import tf.fds.app.application.responseDTO.SignatureDTO;
 import tf.fds.app.application.useCases.CreateSignatureUC;
 import tf.fds.app.application.useCases.GetAllApplicativesUC;
 import tf.fds.app.application.useCases.GetAllClientsUC;
+import tf.fds.app.application.useCases.GetSignaturesForClientUC;
 import tf.fds.app.application.useCases.UpdateCostUC;
 
 @RestController
@@ -24,12 +25,14 @@ public class Controller {
     private GetAllClientsUC getAllClients;
     private CreateSignatureUC createSignature;
     private UpdateCostUC updateCost;
+    private GetSignaturesForClientUC getSignaturesForClient;  
     private GetAllApplicativesUC getAllApplicatives;
 
-    public Controller (GetAllClientsUC getAllClients, CreateSignatureUC createSignature, UpdateCostUC updateCost, GetAllApplicativesUC getAllApplicatives){
+    public Controller (GetAllClientsUC getAllClients, CreateSignatureUC createSignature, UpdateCostUC updateCost, GetSignaturesForClientUC getSignaturesForClient, GetAllApplicativesUC getAllApplicatives){
         this.getAllClients = getAllClients;
         this.createSignature = createSignature;
         this.updateCost = updateCost;
+        this.getSignaturesForClient = getSignaturesForClient;
         this.getAllApplicatives = getAllApplicatives;
     }
 
@@ -69,11 +72,11 @@ public class Controller {
     //     //TODO
     // }
 
-    // @GetMapping("/servcad/asscli/:codcli")
-    // @CrossOrigin(origins = "*")
-    // public List<SignatureDTO> getSubscriptionsForClient(@PathVariable long clientId){
-    //     //TODO
-    // }
+    @GetMapping("/servcad/asscli/{clientId}")
+    @CrossOrigin(origins = "*")
+    public List<SignatureDTO> getSignaturesForClient(@PathVariable long clientId){
+        return getSignaturesForClient.run(clientId);
+    }
 
     // @GetMapping("/servcad/assapp/:codapp")
     // @CrossOrigin(origins = "*")

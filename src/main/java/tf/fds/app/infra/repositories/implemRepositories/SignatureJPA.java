@@ -66,7 +66,7 @@ public class SignatureJPA implements ISignatureRepository {
      * Pesquisa todas as assinaturas e filtra as que possuem o código do cliente igual a codcli
      */
     @Override
-    public List<SignatureModel> getAllSignaturesByClient(long codcli) {
+    public List<SignatureModel> getSignaturesByClient(long codcli) {
         List<Signature> sign = signatureRep.findAll().stream().filter(s -> s.getClient().getCode() == codcli).toList();
         return sign.stream().map(s -> SignatureAdapter.toSignatureModel(s)).toList();
     }
@@ -78,7 +78,7 @@ public class SignatureJPA implements ISignatureRepository {
      * Pesquisa todas as assinaturas e filtra as que possuem o código do aplicativo igual a codapp
      */
     @Override
-    public List<SignatureModel> getAllSignaturesByApp(long codapp) {
+    public List<SignatureModel> getSignaturesByApp(long codapp) {
         List<Signature> sign = signatureRep.findAll().stream().filter(s -> s.getApplicative().getCode() == codapp).toList();
         return sign.stream().map(s -> SignatureAdapter.toSignatureModel(s)).toList();
     }

@@ -29,11 +29,11 @@ public class SignatureService {
       return signatureRep.getAllSignatures();
    }
 
-   public List<SignatureModel> getAllSignaturesByClient(long codcli){
-      return signatureRep.getAllSignaturesByClient(codcli);
+   public List<SignatureModel> getSignaturesByClient(long codcli){
+      return signatureRep.getSignaturesByClient(codcli);
    }
 
-   public List<SignatureModel> getAllSignaturesByApp(long codapp){
-      return signatureRep.getAllSignaturesByApp(codapp);
+   public List<SignatureModel> getSignaturesByApp(long codapp){
+      return signatureRep.getSignaturesByApp(codapp);
    }
 }

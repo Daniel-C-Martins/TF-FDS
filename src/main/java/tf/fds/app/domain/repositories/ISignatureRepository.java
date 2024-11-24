@@ -8,6 +8,6 @@ public interface ISignatureRepository {
     SignatureModel createSignature(SignatureModel signature);
     boolean isActive(long codass);
     List<SignatureModel> getAllSignatures();
-    List<SignatureModel> getAllSignaturesByClient(long codcli);
-    List<SignatureModel> getAllSignaturesByApp(long codapp);
+    List<SignatureModel> getSignaturesByClient(long codcli);
+    List<SignatureModel> getSignaturesByApp(long codapp);
 }
