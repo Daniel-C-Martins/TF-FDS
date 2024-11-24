@@ -9,18 +9,11 @@ import tf.fds.app.domain.services.PaymentService;
 import tf.fds.app.domain.services.SignatureService;
 
 /**
- * Caso de uso para registrar umpayment.
+ * Componente de caso de uso para registrar um pagamento.
  */
 public class RegisterPaymentUC {
 
-   /**
-    * Serviço para lidar com operações de pagamento.
-    */
    private PaymentService paymentService;
-
-   /**
-    * Serviço para lidar com operações de assinatura.
-    */
    private SignatureService signatureService;
 
    /**
@@ -47,6 +40,8 @@ public class RegisterPaymentUC {
     * @throws IllegalArgumentException se a assinatura não for encontrada
     */
    public PaymentDTO run(int day, int month, int year, long signatureCode, double value) {
+
+      // Cria um novo pagamento com os detalhes fornecidos
       PaymentModel payment = new PaymentModel();
       LocalDate data = LocalDate.of(year, month, day);
       payment.setPaymentDate(data);
@@ -54,9 +49,11 @@ public class RegisterPaymentUC {
       payment.setSale("Venda");
       payment.setPayedValue(value);
 
+      // verifica se o valor do pagamento é suficiente
       if (payment.getPayedValue() < payment.getSignature().getApplicative().getMonthlyCost()) {
          payment.setStatus(PaymentStatuses.INCORRECT_VALUE);
 
+         // Se o valor for insuficiente, retorna o valor total
          PaymentDTO payDTO = new PaymentDTO(payment);
          payDTO.setReturnedValue(payment.getPayedValue());
          return payDTO;
