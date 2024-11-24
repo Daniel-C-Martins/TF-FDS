@@ -34,6 +34,9 @@ public class PaymentService {
                 payment.setReturnedValue(
                         payment.getPayedValue() - payment.getSignature().getApplicative().getMonthlyCost() * 0.5);
                 payment.getSignature().setEndDate(payment.getSignature().getEndDate().plusDays(30));
+            } else {
+                payment.setReturnedValue(
+                        payment.getPayedValue() - payment.getSignature().getApplicative().getMonthlyCost());
             }
         }
 
@@ -42,6 +45,9 @@ public class PaymentService {
             if (payment.getPaymentDate().getMonthValue() == 12 && payment.getPaymentDate().getDayOfMonth() <= 25) {
                 payment.setReturnedValue((payment.getSignature().getApplicative().getMonthlyCost() * 12) * 0.65);
                 payment.getSignature().setEndDate(payment.getSignature().getEndDate().plusYears(1));
+            } else {
+                payment.setReturnedValue(
+                        payment.getPayedValue() - payment.getSignature().getApplicative().getMonthlyCost());
             }
         }
         // Promoção de Ano Novo
@@ -50,6 +56,9 @@ public class PaymentService {
                     && payment.getPaymentDate().getDayOfMonth() <= 29) {
                 payment.setReturnedValue((payment.getSignature().getApplicative().getMonthlyCost() * 0.75));
                 payment.getSignature().setEndDate(payment.getSignature().getEndDate().plusDays(35));
+            } else {
+                payment.setReturnedValue(
+                        payment.getPayedValue() - payment.getSignature().getApplicative().getMonthlyCost());
             }
         }
         // Promoção de Carnaval
@@ -59,7 +68,11 @@ public class PaymentService {
                 payment.setReturnedValue(
                         payment.getPayedValue() - payment.getSignature().getApplicative().getMonthlyCost() * 0.6);
                 payment.getSignature().setEndDate(payment.getSignature().getEndDate().plusDays(30));
+            } else {
+                payment.setReturnedValue(
+                        payment.getPayedValue() - payment.getSignature().getApplicative().getMonthlyCost());
             }
+
         }
         // Promoção de dia dos pais
         else if (payment.getSale().equals("PAIS85")) {
@@ -67,6 +80,9 @@ public class PaymentService {
                 payment.setReturnedValue(
                         payment.getPayedValue() - payment.getSignature().getApplicative().getMonthlyCost() * 0.85);
                 payment.getSignature().setEndDate(payment.getSignature().getEndDate().plusDays(30));
+            } else {
+                payment.setReturnedValue(
+                        payment.getPayedValue() - payment.getSignature().getApplicative().getMonthlyCost());
             }
         }
         // Promoção de dia das crianças
@@ -75,6 +91,9 @@ public class PaymentService {
                 payment.setReturnedValue(
                         payment.getPayedValue() - payment.getSignature().getApplicative().getMonthlyCost() * 0.90);
                 payment.getSignature().setEndDate(payment.getSignature().getEndDate().plusDays(30));
+            } else {
+                payment.setReturnedValue(
+                    payment.getPayedValue() - payment.getSignature().getApplicative().getMonthlyCost());
             }
         }
         // Promoção de dia das mães
@@ -83,6 +102,9 @@ public class PaymentService {
                 payment.setReturnedValue(
                         payment.getPayedValue() - payment.getSignature().getApplicative().getMonthlyCost() * 0.85);
                 payment.getSignature().setEndDate(payment.getSignature().getEndDate().plusDays(30));
+            } else {
+                payment.setReturnedValue(
+                        payment.getPayedValue() - payment.getSignature().getApplicative().getMonthlyCost());
             }
         }
     }
