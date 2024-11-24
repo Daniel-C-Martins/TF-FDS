@@ -64,6 +64,8 @@ public class RegisterPaymentUC {
          payment.setStatus(PaymentStatuses.OK);
          PaymentDTO payDTO = new PaymentDTO(paymentService.registerPayment(payment));
          payDTO.setReturnedValue(payment.getPayedValue() - payment.getSignature().getApplicative().getMonthlyCost());
+         LocalDate endDate = signatureService.getSignatureById(signatureCode).getEndDate();
+         signatureService.getSignatureById(signatureCode).setEndDate(endDate.plusDays(30));
          return payDTO;
       }
    }
