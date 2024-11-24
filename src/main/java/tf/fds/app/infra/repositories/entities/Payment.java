@@ -30,6 +30,9 @@ public class Payment {
     @Column(name = "sale", nullable = true)
     private String sale;
 
+    @Column(name = "returned_value", nullable = false)
+    private double returnedValue;
+
     @Column(name = "status", nullable = false)
     private PaymentStatuses status;
 
@@ -63,6 +66,10 @@ public class Payment {
         return status;
     }
 
+    public double getReturnedValue() {
+        return returnedValue;
+    }
+
     public void setCode(long code) {
         this.code = code;
     }
@@ -85,5 +92,9 @@ public class Payment {
 
     public void setStatus(PaymentStatuses status) {
         this.status = status;
+    }
+
+    public void setReturnedValue(double returnedValue) {
+        this.returnedValue = returnedValue;
     }
 }

@@ -12,6 +12,7 @@ public class PaymentModel {
     private String sale;
     private SignatureModel signature;
     private PaymentStatuses status;
+    private double returnedValue;
 
     public PaymentModel() {
     }
@@ -40,6 +41,10 @@ public class PaymentModel {
         return status;
     }
 
+    public double getReturnedValue() {
+        return returnedValue;
+    }
+
     public void setCode(long code) {
         this.code = code;
     }
@@ -62,5 +67,9 @@ public class PaymentModel {
 
     public void setStatus(PaymentStatuses status) {
         this.status = status;
+    }
+
+    public void setReturnedValue(double returnedValue) {
+        this.returnedValue = returnedValue;
     }
 }

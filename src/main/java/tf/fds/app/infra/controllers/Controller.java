@@ -104,7 +104,7 @@ public class Controller {
     @PostMapping("/registrarpagamento")
     @CrossOrigin(origins = "*")
     public PaymentDTO registerPayment(@RequestBody RequestPayDTO payment) {
-        return registerPayment.run(payment.getDay(), payment.getMonth(), payment.getYear(), payment.getSignatureCode(), payment.getValue());
+        return registerPayment.run(payment.getDay(), payment.getMonth(), payment.getYear(), payment.getSignatureCode(), payment.getValue(), payment.getSale());
     }
 
     @GetMapping("/assinvalida/{signatureCode}")

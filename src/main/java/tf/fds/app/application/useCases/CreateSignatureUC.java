@@ -56,7 +56,7 @@ public class CreateSignatureUC {
       signModel.setClient(clientService.getClientById(clienteId));
       signModel.setApplicative(applicativeService.getApplicativeById(applicativeId));
       signModel.setBeginningDate(LocalDate.now());
-      signModel.setEndDate(LocalDate.now().plusDays(30));
+      signModel.setEndDate(LocalDate.now().plusDays(7));
       signModel.setType(SignatureTypes.ACTIVE);
 
       return new SignatureDTO(signatureService.createSignature(signModel));
