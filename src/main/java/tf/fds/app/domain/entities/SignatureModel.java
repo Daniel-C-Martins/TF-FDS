@@ -2,18 +2,15 @@ package tf.fds.app.domain.entities;
 
 import java.time.LocalDate;
 
+import tf.fds.app.infra.Enums.SignatureType.SignatureTypes;
 public class SignatureModel {
-    public enum SignatureTypes {
-        ALL,
-        ACTIVE,
-        CANCELED
-    }
 
     private long code;
     private LocalDate beginningDate;
     private LocalDate endDate;
     private ClientModel client;
     private ApplicativeModel applicative;
+    private SignatureTypes type;
 
     public SignatureModel() {
     }
@@ -38,6 +35,10 @@ public class SignatureModel {
         return applicative;
     }
 
+    public SignatureTypes getType() {
+        return type;
+    }
+
     public void setCode(long code) {
         this.code = code;
     }
@@ -57,4 +58,9 @@ public class SignatureModel {
     public void setApplicative(ApplicativeModel applicative) {
         this.applicative = applicative;
     }
+
+    public void setType(SignatureTypes type) {
+        this.type = type;
+    }
+
 }

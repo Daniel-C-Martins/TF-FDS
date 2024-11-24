@@ -24,6 +24,9 @@ public class GetSignaturesForAppUC {
       if (applicativeService.getApplicativeById(codapp) == null) {
          throw new IllegalArgumentException("Aplicativo não encontrado");
       }
-      return signatureService.getSignaturesByApp(codapp).stream().map(signature -> new SignatureDTO(signature)).toList();
+
+      signatureService.updateSignatureStatus();
+      return signatureService.getSignaturesByApp(codapp).stream().map(signature -> new SignatureDTO(signature))
+            .toList();
    }
 }

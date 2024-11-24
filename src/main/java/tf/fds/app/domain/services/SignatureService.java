@@ -40,4 +40,8 @@ public class SignatureService {
    public SignatureModel getSignatureById(long codass){
       return signatureRep.getSignatureById(codass);
    }
+
+   public void updateSignatureStatus(){
+      signatureRep.updateSignatureStatus();
+   }
 }

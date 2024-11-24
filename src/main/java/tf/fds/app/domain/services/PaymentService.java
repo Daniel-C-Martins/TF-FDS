@@ -14,8 +14,8 @@ public class PaymentService {
    public PaymentService(IPaymentRepository paymentRep) {
       this.paymentRep = paymentRep;
    }
-
-   PaymentModel registerPayment(PaymentModel payment) {
+      
+   public PaymentModel registerPayment(PaymentModel payment) {
       applyPromotion(payment);
       return paymentRep.registerPayment(payment);
    }

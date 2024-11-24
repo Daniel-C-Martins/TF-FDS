@@ -8,6 +8,7 @@ import tf.fds.app.domain.entities.SignatureModel;
 import tf.fds.app.domain.services.ApplicativeService;
 import tf.fds.app.domain.services.ClientService;
 import tf.fds.app.domain.services.SignatureService;
+import tf.fds.app.infra.Enums.SignatureType.SignatureTypes;
 
 /**
  * Caso de uso para criar uma nova assinatura.
@@ -56,6 +57,7 @@ public class CreateSignatureUC {
       signModel.setApplicative(applicativeService.getApplicativeById(applicativeId));
       signModel.setBeginningDate(LocalDate.now());
       signModel.setEndDate(LocalDate.now().plusDays(30));
+      signModel.setType(SignatureTypes.ACTIVE);
 
       return new SignatureDTO(signatureService.createSignature(signModel));
    }
