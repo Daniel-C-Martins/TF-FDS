@@ -1,5 +1,5 @@
-tf/fds/app/domain/entities/SignatureModel.class
 tf/fds/app/domain/repositories/IPaymentRepository.class
+tf/fds/app/domain/entities/SignatureModel.class
 tf/fds/app/infra/repositories/InterfJPA/Applicative_ItfRep.class
 tf/fds/app/infra/repositories/adapter/ClientAdapter.class
 tf/fds/app/application/useCases/GetAllClientsUC.class

@@ -32,7 +32,7 @@ public class PaymentService {
         else if (payment.getSale().equals("BLK50")) {
             if (payment.getPaymentDate().getMonthValue() == 11 && payment.getPaymentDate().getDayOfMonth() >= 21) {
                 payment.setReturnedValue(
-                        payment.getPayedValue() - payment.getSignature().getApplicative().getMonthlyCost() * 0.5);
+                        payment.getPayedValue() - ( payment.getSignature().getApplicative().getMonthlyCost() * 0.5));
                 payment.getSignature().setEndDate(payment.getSignature().getEndDate().plusDays(30));
             } else {
                 payment.setReturnedValue(
